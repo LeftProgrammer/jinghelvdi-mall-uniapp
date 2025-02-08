@@ -1,6 +1,6 @@
 import { onBeforeUnmount, reactive, ref } from 'vue';
 import { baseUrl, websocketPath } from '@jinghelvdi/core/src/config/index';
-import { copyValueToTarget } from '@jinghelvdi/core/src/util';
+import { copyValueToTarget } from '@jinghelvdi/core/src/util/index';
 import { getRefreshToken } from '@/sheep/request';
 
 /**

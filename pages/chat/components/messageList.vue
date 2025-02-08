@@ -49,7 +49,7 @@
   import KeFuApi from '@/sheep/api/promotion/kefu';
   import { isEmpty } from '@jinghelvdi/core/src/helper/utils';
   import sheep from '@/sheep';
-  import { formatDate } from '@jinghelvdi/core/src/util';
+  import { formatDate } from '@jinghelvdi/core/src/util/index';
 
   const sys_navBar = sheep.$platform.navbar;
   const messageList = ref([]); // 消息列表
