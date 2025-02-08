@@ -3,7 +3,7 @@ import { $helper } from '@jinghelvdi/core';
 import $url from '@/sheep/url';
 import $router from '@/sheep/router';
 import $platform from '@/sheep/platform';
-import zIndex from '@/sheep/config/zIndex.js';
+import zIndex from '@jinghelvdi/core/src/config/zIndex';
 import $store from '@/sheep/store';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';

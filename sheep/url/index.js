@@ -1,5 +1,5 @@
 import $store from '@/sheep/store';
-import { staticUrl } from '@/sheep/config';
+import { staticUrl } from '@jinghelvdi/core/src/config/index';
 
 const cdn = (url = '', cdnurl = '') => {
   if (!url) return '';

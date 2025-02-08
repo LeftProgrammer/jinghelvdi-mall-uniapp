@@ -4,7 +4,7 @@
  */
 
 import Request from 'luch-request';
-import { apiPath, baseUrl, tenantId } from '@/sheep/config';
+import { apiPath, baseUrl, tenantId } from '@jinghelvdi/core/src/config/index';
 import $store from '@/sheep/store';
 import $platform from '@/sheep/platform';
 import { showAuthModal } from '@/sheep/hooks/useModal';

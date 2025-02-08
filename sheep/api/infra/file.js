@@ -1,4 +1,4 @@
-import { baseUrl, apiPath, tenantId } from '@/sheep/config';
+import { baseUrl, apiPath, tenantId } from '@jinghelvdi/core/src/config/index';
 import request from '@/sheep/request';
 
 const FileApi = {

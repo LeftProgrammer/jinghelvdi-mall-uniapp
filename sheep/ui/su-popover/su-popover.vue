@@ -36,7 +36,7 @@
 
 <script>
   import { guid } from '@jinghelvdi/core';
-  import zIndexConfig from '@/sheep/config/zIndex.js';
+  import zIndexConfig from '@jinghelvdi/core/src/config/zIndex';
   import sheep from '@/sheep';
 
   export default {
