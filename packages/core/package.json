@@ -23,7 +23,8 @@
   },
   "peerDependencies": {
     "vue": "^3.3.0",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist-uni": "^1.2.0"
   },
   "scripts": {
     "build": "vite build",
