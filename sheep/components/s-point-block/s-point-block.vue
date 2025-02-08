@@ -145,7 +145,7 @@
   import sheep from '@/sheep';
   import SpuApi from '@/sheep/api/product/spu';
   import PointApi from '@/sheep/api/promotion/point';
-  import { PromotionActivityTypeEnum } from '@/sheep/util/const';
+  import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 
   // 布局类型
   const LayoutTypeEnum = {

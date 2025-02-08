@@ -22,11 +22,6 @@ export default (command, mode) => {
 			}),
 			mpliveMainfestPlugin(env.SHOPRO_MPLIVE_ON)
 		],
-		// resolve: {
-		// alias: {
-		// 	'@/sheep': '@jinghelvdi/core'
-		// }
-		// },
 		server: {
 			host: true,
 			// open: true,

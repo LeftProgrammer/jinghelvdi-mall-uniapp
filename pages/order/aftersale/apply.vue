@@ -126,7 +126,7 @@
   import TradeConfigApi from '@/sheep/api/trade/config';
   import { fen2yuan } from '@/sheep/hooks/useGoods';
   import AfterSaleApi from '@/sheep/api/trade/afterSale';
-  import { WxaSubscribeTemplate } from '@/sheep/util/const';
+  import { WxaSubscribeTemplate } from '@jinghelvdi/core/src/util/const';
 
   const form = ref(null);
   const state = reactive({

@@ -69,7 +69,7 @@
   import sheep from '@/sheep';
   import _ from 'lodash-es';
   import { formatOrderColor } from '@/sheep/hooks/useGoods';
-  import { resetPagination } from '@/sheep/util';
+  import { resetPagination } from '@jinghelvdi/core/src/util';
   import CombinationApi from '@/sheep/api/promotion/combination';
 
   // 数据

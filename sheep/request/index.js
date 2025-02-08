@@ -9,7 +9,7 @@ import $store from '@/sheep/store';
 import $platform from '@/sheep/platform';
 import { showAuthModal } from '@/sheep/hooks/useModal';
 import AuthUtil from '@/sheep/api/member/auth';
-import { getTerminal } from '@/sheep/util/const';
+import { getTerminal } from '@jinghelvdi/core/src/util/const';
 
 const options = {
   // 显示操作成功消息 默认不显示

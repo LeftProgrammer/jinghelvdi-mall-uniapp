@@ -2,7 +2,7 @@
  * Validate v1.0.0 通用验证
  * @description 项目中用到的表单验证规则
  */
-import test from '@jinghelvdi/core/src/helper/test.js';
+import test from '../helper/test.js';
 
 // 手机号
 export const mobile = {

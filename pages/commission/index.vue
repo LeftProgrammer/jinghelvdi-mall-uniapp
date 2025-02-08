@@ -23,7 +23,7 @@
 	import commissionMenu from './components/commission-menu.vue';
 	import commissionAuth from './components/commission-auth.vue';
   import sheep from '@/sheep';
-  import { SharePageEnum } from '@/sheep/util/const';
+  import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
   /** 分销邀请 */
   const shareInfo = computed(() => {

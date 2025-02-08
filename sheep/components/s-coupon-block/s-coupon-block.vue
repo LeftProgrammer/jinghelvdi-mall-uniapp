@@ -35,11 +35,11 @@
 	import {
 		CouponTemplateValidityTypeEnum,
 		PromotionDiscountTypeEnum
-	} from "@/sheep/util/const";
+	} from "@jinghelvdi/core/src/util/const";
 	import {
 		floatToFixed2,
 		formatDate
-	} from "@/sheep/util";
+	} from "@jinghelvdi/core/src/util/index";
 
 	const props = defineProps({
 		data: {

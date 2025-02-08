@@ -451,7 +451,7 @@
     getRewardActivityRuleItemDescriptions,
   } from '@/sheep/hooks/useGoods';
   import { isArray } from 'lodash-es';
-  import { PromotionActivityTypeEnum } from '@/sheep/util/const';
+  import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 
   // 接收参数
   const props = defineProps({

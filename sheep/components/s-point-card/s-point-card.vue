@@ -144,7 +144,7 @@
   import { computed, nextTick, onMounted, reactive, watch } from 'vue';
   import sheep from '@/sheep';
   import SpuApi from '@/sheep/api/product/spu';
-  import { PromotionActivityTypeEnum } from '@/sheep/util/const';
+  import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
   import { isEmpty } from '@jinghelvdi/core/src/helper/utils';
 
   // 布局类型

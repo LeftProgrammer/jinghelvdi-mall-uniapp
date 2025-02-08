@@ -61,7 +61,7 @@
 
 <script setup>
   import { ref, reactive, unref } from 'vue';
-  import { code, password } from '@/sheep/validate/form';
+  import { code, password } from '@jinghelvdi/core/src/validate/form';
   import { closeAuthModal, getSmsCode, getSmsTimer } from '@/sheep/hooks/useModal';
   import UserApi from '@/sheep/api/member/user';
 

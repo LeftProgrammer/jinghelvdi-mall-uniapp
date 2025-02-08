@@ -61,7 +61,7 @@
 <script setup>
   import { ref, reactive, unref } from 'vue';
   import sheep from '@/sheep';
-  import { code, mobile } from '@/sheep/validate/form';
+  import { code, mobile } from '@jinghelvdi/core/src/validate/form';
   import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '@/sheep/hooks/useModal';
   import AuthUtil from '@/sheep/api/member/auth';
 

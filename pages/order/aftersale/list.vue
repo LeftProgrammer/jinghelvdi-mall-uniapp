@@ -71,7 +71,7 @@
     handleAfterSaleButtons,
   } from '@/sheep/hooks/useGoods';
   import AfterSaleApi from '@/sheep/api/trade/afterSale';
-  import { resetPagination } from '@/sheep/util';
+  import { resetPagination } from '@jinghelvdi/core/src/util';
 
   const state = reactive({
     currentTab: 0,

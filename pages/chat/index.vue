@@ -55,7 +55,7 @@
   import FileApi from '@/sheep/api/infra/file';
   import KeFuApi from '@/sheep/api/promotion/kefu';
   import { useWebSocket } from '@/sheep/hooks/useWebSocket';
-  import { jsonParse } from '@/sheep/util';
+  import { jsonParse } from '@jinghelvdi/core/src/util';
 
   const sys_navBar = sheep.$platform.navbar;
 

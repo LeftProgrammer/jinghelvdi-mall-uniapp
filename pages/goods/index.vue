@@ -234,7 +234,7 @@
   import countDown from '@/sheep/components/countDown/index.vue';
   import OrderApi from '@/sheep/api/trade/order';
   import activity from '@/sheep/api/promotion/activity';
-  import { SharePageEnum } from '@/sheep/util/const';
+  import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
   const bgColor = {
     bgColor: '#E93323',

@@ -70,7 +70,7 @@
 <script setup>
   import { computed, ref, reactive, unref } from 'vue';
   import sheep from '@/sheep';
-  import { code, mobile } from '@/sheep/validate/form';
+  import { code, mobile } from '@jinghelvdi/core/src/validate/form';
   import { closeAuthModal, getSmsCode, getSmsTimer } from '@/sheep/hooks/useModal';
   import UserApi from '@/sheep/api/member/user';
 

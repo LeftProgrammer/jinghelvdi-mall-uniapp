@@ -104,7 +104,7 @@
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import _ from 'lodash-es';
   import FavoriteApi from '@/sheep/api/product/favorite';
-  import { resetPagination } from '@/sheep/util';
+  import { resetPagination } from '@jinghelvdi/core/src/util';
 
   const sys_navBar = sheep.$platform.navbar;
 

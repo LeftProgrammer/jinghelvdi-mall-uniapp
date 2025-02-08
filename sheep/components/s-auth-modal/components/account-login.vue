@@ -50,7 +50,7 @@
 <script setup>
   import { ref, reactive, unref } from 'vue';
   import sheep from '@/sheep';
-  import { mobile, password } from '@/sheep/validate/form';
+  import { mobile, password } from '@jinghelvdi/core/src/validate/form';
   import { showAuthModal, closeAuthModal } from '@/sheep/hooks/useModal';
   import AuthUtil from '@/sheep/api/member/auth';
 

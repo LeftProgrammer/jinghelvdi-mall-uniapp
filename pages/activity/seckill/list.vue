@@ -152,7 +152,7 @@
   import { useDurationTime } from '@/sheep/hooks/useGoods';
   import SeckillApi from '@/sheep/api/promotion/seckill';
   import dayjs from 'dayjs';
-  import { TimeStatusEnum } from '@/sheep/util/const';
+  import { TimeStatusEnum } from '@jinghelvdi/core/src/util/const';
 
   // 计算页面高度
   const { safeAreaInsets, safeArea } = sheep.$platform.device;
