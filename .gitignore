@@ -1,5 +1,6 @@
 unpackage/*
 node_modules/*
+packages/core/node_modules/*
 .idea/*
 deploy.sh
 .hbuilderx/

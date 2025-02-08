@@ -1,5 +1,5 @@
 import $store from '@/sheep/store';
-import $helper from '@/packages/core/src/helper';
+import { $helper } from '@jinghelvdi/core';
 import dayjs from 'dayjs';
 import { ref } from 'vue';
 import test from '@jinghelvdi/core/src/helper/test.js';
