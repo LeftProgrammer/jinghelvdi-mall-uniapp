@@ -1,5 +1,5 @@
 import $wxsdk from '@/sheep/libs/sdk-h5-weixin';
-import { getRootUrl } from '@/sheep/helper';
+import { getRootUrl } from '@jinghelvdi/core';
 import AuthUtil from '@/sheep/api/member/auth';
 import SocialApi from '@/sheep/api/member/social';
 

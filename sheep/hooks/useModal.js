@@ -1,8 +1,8 @@
 import $store from '@/sheep/store';
-import $helper from '@/sheep/helper';
+import $helper from '@/packages/core/src/helper';
 import dayjs from 'dayjs';
 import { ref } from 'vue';
-import test from '@/sheep/helper/test.js';
+import test from '@jinghelvdi/core/src/helper/test.js';
 import AuthUtil from '@/sheep/api/member/auth';
 
 // 打开授权弹框

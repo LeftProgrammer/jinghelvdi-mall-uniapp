@@ -12,7 +12,7 @@
 
 <script setup>
   import sheep from '@/sheep';
-  import { guid } from '@/sheep/helper';
+  import { guid } from '@jinghelvdi/core';
   const props = defineProps({
     data: {
       type: Object,

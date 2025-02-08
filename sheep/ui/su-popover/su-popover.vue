@@ -35,7 +35,7 @@
 </template>
 
 <script>
-  import { guid } from '@/sheep/helper';
+  import { guid } from '@jinghelvdi/core';
   import zIndexConfig from '@/sheep/config/zIndex.js';
   import sheep from '@/sheep';
 

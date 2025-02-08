@@ -1,0 +1,45 @@
+{
+  "name": "@jinghelvdi/core",
+  "version": "1.0.0-alpha.0",
+  "description": "Uniapp核心模块库，提供基础工具、状态管理和多平台适配。",
+  "keywords": ["uniapp", "core", "framework", "cross-platform"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jinghelvdi/mall-uniapp.git",
+    "directory": "packages/core"
+  },
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    },
+    "./src/*": {
+      "import": "./src/*",
+      "require": "./src/*"
+    }
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "pinia": "^2.1.7"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest",
+    "lint": "eslint . --ext .js,.vue",
+    "prepublish": "npm run build"
+  },
+  "files": [
+    "src",
+    "types",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

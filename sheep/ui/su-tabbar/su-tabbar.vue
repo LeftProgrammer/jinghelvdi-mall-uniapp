@@ -42,7 +42,7 @@
    *
    */
 
-  import { deepMerge, addStyle, sleep } from '@/sheep/helper';
+  import { deepMerge, addStyle, sleep } from '@jinghelvdi/core';
   import sheep from '@/sheep';
 
   export default {

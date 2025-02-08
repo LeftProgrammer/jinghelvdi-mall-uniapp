@@ -2,7 +2,7 @@ import sheep from '@/sheep';
 // #ifdef H5
 import $wxsdk from '@/sheep/libs/sdk-h5-weixin';
 // #endif
-import { getRootUrl } from '@/sheep/helper';
+import { getRootUrl } from '@jinghelvdi/core';
 import PayOrderApi from '@/sheep/api/pay/order';
 
 /**

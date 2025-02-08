@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { deepMerge, addStyle, addUnit, sleep, guid, getPx, os, sys } from '@/sheep/helper';
+  import { deepMerge, addStyle, addUnit, sleep, guid, getPx, os, sys } from '@jinghelvdi/core';
   import sheep from '@/sheep';
   /**
    * sticky 吸顶

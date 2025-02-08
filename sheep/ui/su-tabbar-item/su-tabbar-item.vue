@@ -53,7 +53,7 @@
    * @property {Object}      customStyle  定义需要用到的外部样式
    *
    */
-  import { $parent, addStyle } from '@/sheep/helper';
+  import { $parent, addStyle } from '@jinghelvdi/core';
 
   export default {
     name: 'su-tabbar-item',
