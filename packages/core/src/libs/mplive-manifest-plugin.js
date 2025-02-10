@@ -29,4 +29,4 @@ function mpliveMainfestPlugin(isOpen) {
 	})
 }
 
-export default mpliveMainfestPlugin
+module.exports = mpliveMainfestPlugin;
