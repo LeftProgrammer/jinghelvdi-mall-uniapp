@@ -1,4 +1,4 @@
-import router from '@/sheep/router';
+import router from '@/packages/core/src/router';
 export default {
   /**
    * 打电话

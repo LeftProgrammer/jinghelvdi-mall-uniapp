@@ -1,7 +1,7 @@
 import DiyApi from '@/sheep/api/promotion/diy';
 import { defineStore } from 'pinia';
 import $platform from '@/sheep/platform';
-import $router from '@/sheep/router';
+import { $router } from '@jinghelvdi/core';
 import user from './user';
 import sys from './sys';
 

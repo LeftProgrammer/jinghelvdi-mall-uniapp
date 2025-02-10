@@ -1,17 +1,16 @@
-import { $helper,  $url } from '@jinghelvdi/core';
+import { $helper,  $url, $router } from '@jinghelvdi/core';
 
-import $router from '@/sheep/router';
 import $platform from '@/sheep/platform';
 import zIndex from '@jinghelvdi/core/src/config/zIndex';
 import $store from '@/sheep/store';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import duration from 'dayjs/plugin/duration';
-import 'dayjs/locale/zh-cn';
+// import dayjs from 'dayjs';
+// import relativeTime from 'dayjs/plugin/relativeTime';
+// import duration from 'dayjs/plugin/duration';
+// import 'dayjs/locale/zh-cn';
 
-dayjs.locale('zh-cn');
-dayjs.extend(relativeTime);
-dayjs.extend(duration);
+// dayjs.locale('zh-cn');
+// dayjs.extend(relativeTime);
+// dayjs.extend(duration);
 
 const sheep = {
   $helper,

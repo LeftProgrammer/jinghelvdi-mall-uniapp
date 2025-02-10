@@ -1,6 +1,6 @@
 import $store from '@/sheep/store';
 import $platform from '@/sheep/platform';
-import $router from '@/sheep/router';
+import { $router } from '@jinghelvdi/core';
 import { $url } from '@jinghelvdi/core';
 import BrokerageApi from '@/sheep/api/trade/brokerage';
 import { SharePageEnum } from '@jinghelvdi/core/src/util/const';

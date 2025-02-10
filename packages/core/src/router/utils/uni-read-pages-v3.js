@@ -2,21 +2,31 @@
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
+
 const fs = require('fs');
-import stripJsonComments from './strip-json-comments';
-import { isArray, isEmpty } from 'lodash';
+const path = require('path');
+const stripJsonComments = require('./strip-json-comments');
+const _ = require('lodash');
 
 class TransformPages {
   constructor({ includes, pagesJsonDir }) {
     this.includes = includes;
-    this.uniPagesJSON = JSON.parse(stripJsonComments(fs.readFileSync(pagesJsonDir, 'utf-8')));
+    this.uniPagesJSON = this.readPagesJSON(pagesJsonDir);
     this.routes = this.getPagesRoutes().concat(this.getSubPackagesRoutes());
     this.tabbar = this.getTabbarRoutes();
     this.routesMap = this.transformPathToKey(this.routes);
   }
-  /**
-   * 通过读取pages.json文件 生成直接可用的routes
-   */
+
+  readPagesJSON(pagesPath) {
+    const extname = path.extname(pagesPath);
+    if (extname === '.js') {
+      delete require.cache[pagesPath];
+      return require(pagesPath);
+    }
+    const content = fs.readFileSync(pagesPath, 'utf-8');
+    return JSON.parse(stripJsonComments(content));
+  }
+
   getPagesRoutes(pages = this.uniPagesJSON.pages, rootPath = null) {
     let routes = [];
     for (let i = 0; i < pages.length; i++) {
@@ -38,9 +48,7 @@ class TransformPages {
     }
     return routes;
   }
-  /**
-   * 解析小程序分包路径
-   */
+
   getSubPackagesRoutes() {
     if (!(this.uniPagesJSON && this.uniPagesJSON.subPackages)) {
       return [];
@@ -69,7 +77,7 @@ class TransformPages {
   }
 
   transformPathToKey(list) {
-    if (!isArray(list) || isEmpty(list)) {
+    if (!_.isArray(list) || _.isEmpty(list)) {
       return [];
     }
     let map = {};
@@ -100,4 +108,5 @@ function uniReadPagesV3Plugin({ pagesJsonDir, includes }) {
     },
   };
 }
-exports.default = uniReadPagesV3Plugin;
+
+module.exports = uniReadPagesV3Plugin;
