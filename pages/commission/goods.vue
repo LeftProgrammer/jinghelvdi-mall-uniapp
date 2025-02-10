@@ -56,7 +56,7 @@
 
 <script setup>
   import sheep from '@/sheep';
-  import $share from '@/sheep/platform/share';
+  import $share from '@jinghelvdi/core/src/platform/share';
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import { reactive } from 'vue';
   import _ from 'lodash-es';

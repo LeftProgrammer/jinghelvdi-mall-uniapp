@@ -1,6 +1,6 @@
 import { $helper,  $url, $router } from '@jinghelvdi/core';
 
-import $platform from '@/sheep/platform';
+import { $platform } from '@jinghelvdi/core';
 import zIndex from '@jinghelvdi/core/src/config/zIndex';
 import $store from '@/sheep/store';
 // import dayjs from 'dayjs';

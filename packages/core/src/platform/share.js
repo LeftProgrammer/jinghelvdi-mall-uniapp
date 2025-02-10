@@ -1,7 +1,5 @@
 import $store from '@/sheep/store';
-import $platform from '@/sheep/platform';
-import { $router } from '@jinghelvdi/core';
-import { $url } from '@jinghelvdi/core';
+import { $url, $router, $platform } from '@jinghelvdi/core';
 import BrokerageApi from '@/sheep/api/trade/brokerage';
 import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
@@ -206,9 +204,15 @@ const updateShareInfo = (shareInfo) => {
   // #endif
 };
 
-export default {
+const share = {
   getShareInfo,
   updateShareInfo,
   decryptSpm,
-  bindBrokerageUser,
+  buildSpmQuery,
+  buildSpmPath,
+  buildSpmLink,
+  bindBrokerageUser
 };
+
+// 导出share对象
+export default share;

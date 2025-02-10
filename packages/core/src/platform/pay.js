@@ -1,8 +1,9 @@
 import sheep from '@/sheep';
+import { $helper, $router, $platform } from '@jinghelvdi/core'
 // #ifdef H5
 import $wxsdk from '@/sheep/libs/sdk-h5-weixin';
 // #endif
-import { getRootUrl } from '@jinghelvdi/core';
+import { getRootUrl } from '../helper';
 import PayOrderApi from '@/sheep/api/pay/order';
 
 /**
@@ -80,7 +81,7 @@ export default class SheepPay {
         },
       },
     };
-    return payAction[sheep.$platform.name][this.payment]();
+    return payAction[$platform.name][this.payment]();
   }
 
   // 预支付
@@ -93,7 +94,7 @@ export default class SheepPay {
       };
       // 特殊逻辑：微信公众号、小程序支付时，必须传入 openid
       if (['wx_pub', 'wx_lite'].includes(channel)) {
-        const openid = await sheep.$platform.useProvider('wechat').getOpenid();
+        const openid = await $platform.useProvider('wechat').getOpenid();
         // 如果获取不到 openid，微信无法发起支付，此时需要引导
         if (!openid) {
           this.bindWeixin();
@@ -132,11 +133,11 @@ export default class SheepPay {
         this.payResult('success');
       },
       cancel: () => {
-        sheep.$helper.toast('支付已手动取消');
+        $helper.toast('支付已手动取消');
       },
       fail: (error) => {
         if (error.errMsg.indexOf('chooseWXPay:没有此SDK或暂不支持此SDK模拟') >= 0) {
-          sheep.$helper.toast(
+          $helper.toast(
             '发起微信支付失败，原因：可能是微信开发者工具不支持，建议使用微信打开网页后支付',
           );
           return;
@@ -189,7 +190,7 @@ export default class SheepPay {
       },
       fail: (err) => {
         if (err.errMsg === 'requestPayment:fail cancel') {
-          sheep.$helper.toast('支付已手动取消');
+          $helper.toast('支付已手动取消');
         } else {
           this.payResult('fail');
         }
@@ -222,7 +223,7 @@ export default class SheepPay {
       confirmText: '复制链接',
       success: (res) => {
         if (res.confirm) {
-          sheep.$helper.copyText(data.displayContent);
+          $helper.copyText(data.displayContent);
         }
       },
     });
@@ -241,7 +242,7 @@ export default class SheepPay {
         },
         fail: (err) => {
           if (err.errMsg === 'requestPayment:fail [paymentAlipay:62001]user cancel') {
-            sheep.$helper.toast('支付已手动取消');
+            $helper.toast('支付已手动取消');
           } else {
             that.payResult('fail');
           }
@@ -280,7 +281,7 @@ export default class SheepPay {
       content: '请先绑定微信再使用微信支付',
       success: function (res) {
         if (res.confirm) {
-          sheep.$platform.useProvider('wechat').bind();
+          $platform.useProvider('wechat').bind();
         }
       },
     });
@@ -320,7 +321,7 @@ export function getPayMethods(channels) {
       disabled: true,
     },
   ];
-  const platform = sheep.$platform.name;
+  const platform = $platform.name;
 
   // 1. 处理【微信支付】
   const wechatMethod = payMethods[0];
@@ -358,7 +359,7 @@ export function getPayMethods(channels) {
 
 // 支付结果跳转,success:成功，fail:失败
 export function goPayResult(id, orderType, resultType) {
-  sheep.$router.redirect('/pages/pay/result', {
+  $router.redirect('/pages/pay/result', {
     id,
     orderType,
     payState: resultType,

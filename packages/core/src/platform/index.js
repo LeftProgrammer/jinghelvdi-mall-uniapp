@@ -11,7 +11,7 @@
 
 import { isEmpty } from 'lodash-es';
 // #ifdef H5
-import { isWxBrowser } from '@jinghelvdi/core/src/helper/utils.js';
+import { isWxBrowser } from '../helper/utils';
 // #endif
 import wechat from './provider/wechat/index.js';
 import apple from './provider/apple';

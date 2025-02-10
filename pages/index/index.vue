@@ -20,7 +20,7 @@
 		onPullDownRefresh
 	} from '@dcloudio/uni-app';
 	import sheep from '@/sheep';
-	import $share from '@/sheep/platform/share';
+	import $share from '@jinghelvdi/core/src/platform/share';
 	// 隐藏原生tabBar
 	uni.hideTabBar();
 

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import $share from '@/sheep/platform/share';
+import $share from '@jinghelvdi/core/src/platform/share';
 import { clone, cloneDeep } from 'lodash-es';
 import cart from './cart';
 import app from './app';
