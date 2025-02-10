@@ -1,5 +1,4 @@
-import $store from '../store/index.js';
-import { $helper } from '@jinghelvdi/core';
+import { $store, $helper } from '@jinghelvdi/core';
 import dayjs from 'dayjs';
 import { ref } from 'vue';
 import test from '../helper/test.js';
