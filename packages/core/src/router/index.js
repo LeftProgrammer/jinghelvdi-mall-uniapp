@@ -1,4 +1,4 @@
-import $store from '@/sheep/store';
+import $store from '../store';
 import { showAuthModal, showShareModal } from '../hooks/useModal';
 import { isNumber, isString, isEmpty, startsWith, isObject, isNil, clone } from 'lodash-es';
 import throttle from '../helper/throttle';

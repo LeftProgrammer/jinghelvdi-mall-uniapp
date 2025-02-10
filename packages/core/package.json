@@ -37,7 +37,8 @@
   },
   "peerDependencies": {
     "vue": "^3.3.0",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist-uni": "^1.0.0"
   },
   "dependencies": {
     "luch-request": "^3.0.8",

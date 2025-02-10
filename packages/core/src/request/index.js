@@ -5,7 +5,7 @@
 
 import Request from 'luch-request';
 import { apiPath, baseUrl, tenantId } from '../config/index';
-import $store from '@/sheep/store';
+import $store from '../store';
 import $platform from '../platform';
 import { showAuthModal } from '../hooks/useModal';
 import AuthUtil from '@/sheep/api/member/auth';

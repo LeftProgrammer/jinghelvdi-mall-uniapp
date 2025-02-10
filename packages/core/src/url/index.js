@@ -1,4 +1,4 @@
-import $store from '@/sheep/store';
+import $store from '../store';
 import { staticUrl } from '../config';
 
 /**
