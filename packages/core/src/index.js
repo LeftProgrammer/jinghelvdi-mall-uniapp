@@ -5,6 +5,7 @@ import $helper from './helper';
 import $url from './url';
 import $router from './router';
 import $platform from './platform';
+import $zIndex from './config/zIndex';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -20,11 +21,12 @@ const sheep = {
     $helper,
     $url,
     $router,
-    $platform
+    $platform,
+    $zIndex,
 };
 
 // 导出模块
-export { $helper, $url, $router, $platform };
+export { $helper, $url, $router, $platform, $zIndex };
 
 // 导出子模块，支持按需导入
 export * from './helper';

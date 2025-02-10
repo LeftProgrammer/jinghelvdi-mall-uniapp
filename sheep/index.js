@@ -1,7 +1,5 @@
-import { $helper,  $url, $router } from '@jinghelvdi/core';
+import { $helper,  $url, $router, $platform, $zIndex } from '@jinghelvdi/core';
 
-import { $platform } from '@jinghelvdi/core';
-import zIndex from '@jinghelvdi/core/src/config/zIndex';
 import $store from '@/sheep/store';
 // import dayjs from 'dayjs';
 // import relativeTime from 'dayjs/plugin/relativeTime';
@@ -15,11 +13,11 @@ import $store from '@/sheep/store';
 const sheep = {
   $helper,
   $url,
-
-  $store,
   $router,
   $platform,
-  $zIndex: zIndex,
+
+  $store,
+  $zIndex,
 };
 
 // 加载Shopro底层依赖
