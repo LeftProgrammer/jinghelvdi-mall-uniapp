@@ -1,55 +1,11 @@
 import $store from '@/sheep/store';
-import { staticUrl } from '@jinghelvdi/core/src/config/index';
-
-const cdn = (url = '', cdnurl = '') => {
-  if (!url) return '';
-  if (url.indexOf('http') === 0) {
-    return url;
-  }
-  if (cdnurl === '') {
-    cdnurl = $store('app').info.cdnurl;
-  }
-  return cdnurl + url;
-};
-export default {
-  // 添加cdn域名前缀
-  cdn,
-  // 对象存储自动剪裁缩略图
-  thumb: (url = '', params) => {
-    url = cdn(url);
-    return append_thumbnail_params(url, params);
-  },
-  // 静态资源地址
-  static: (url = '', staticurl = '') => {
-    if (staticurl === '') {
-      staticurl = staticUrl;
-    }
-    if (staticurl !== 'local') {
-      url = cdn(url, staticurl);
-    }
-    return url;
-  },
-  // css背景图片地址
-  css: (url = '', staticurl = '') => {
-    if (staticurl === '') {
-      staticurl = staticUrl;
-    }
-    if (staticurl !== 'local') {
-      url = cdn(url, staticurl);
-    }
-    // #ifdef APP-PLUS
-    if (staticurl === 'local') {
-      url = plus.io.convertLocalFileSystemURL(url);
-    }
-    // #endif
-    return `url(${url})`;
-  },
-};
+import { staticUrl } from '../config';
 
 /**
  * 追加对象存储自动裁剪/压缩参数
- *
- * @return string
+ * @param {string} url - 原始URL
+ * @param {object} params - 裁剪参数
+ * @returns {string} 处理后的URL
  */
 function append_thumbnail_params(url, params) {
   const filesystem = $store('app').info.filesystem;
@@ -152,11 +108,9 @@ function append_thumbnail_params(url, params) {
 
 /**
  * 裁剪区域格式转换
- *
- * @param string $type aliyun|qcloud|qiniu
- * @param string $gravity 统一的裁剪区域字符
- *
- * @return string
+ * @param {string} type - 存储类型：aliyun|qcloud|qiniu
+ * @param {string} gravity - 统一的裁剪区域字符
+ * @returns {string} 转换后的裁剪区域值
  */
 function gravityFormatMap(type, gravity) {
   let gravityFormat = {
@@ -197,3 +151,52 @@ function gravityFormatMap(type, gravity) {
 
   return gravityFormat[type][gravity];
 }
+
+const $url = {
+  // 添加cdn域名前缀
+  cdn: (url = '', cdnurl = '') => {
+    if (!url) return '';
+    if (url.indexOf('http') === 0) {
+      return url;
+    }
+    if (cdnurl === '') {
+      cdnurl = $store('app').info.cdnurl;
+    }
+    return cdnurl + url;
+  },
+
+  // 对象存储自动剪裁缩略图
+  thumb: (url = '', params) => {
+    url = $url.cdn(url);
+    return append_thumbnail_params(url, params);
+  },
+
+  // 静态资源地址
+  static: (url = '', staticurl = '') => {
+    if (staticurl === '') {
+      staticurl = staticUrl;
+    }
+    if (staticurl !== 'local') {
+      url = $url.cdn(url, staticurl);
+    }
+    return url;
+  },
+
+  // css背景图片地址
+  css: (url = '', staticurl = '') => {
+    if (staticurl === '') {
+      staticurl = staticUrl;
+    }
+    if (staticurl !== 'local') {
+      url = $url.cdn(url, staticurl);
+    }
+    // #ifdef APP-PLUS
+    if (staticurl === 'local') {
+      url = plus.io.convertLocalFileSystemURL(url);
+    }
+    // #endif
+    return `url(${url})`;
+  }
+};
+
+export default $url;

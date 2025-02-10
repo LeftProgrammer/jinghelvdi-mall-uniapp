@@ -1,6 +1,5 @@
-import { $helper } from '@jinghelvdi/core';
+import { $helper,  $url } from '@jinghelvdi/core';
 
-import $url from '@/sheep/url';
 import $router from '@/sheep/router';
 import $platform from '@/sheep/platform';
 import zIndex from '@jinghelvdi/core/src/config/zIndex';
@@ -16,9 +15,9 @@ dayjs.extend(duration);
 
 const sheep = {
   $helper,
+  $url,
 
   $store,
-  $url,
   $router,
   $platform,
   $zIndex: zIndex,

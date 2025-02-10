@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import dayjs from 'dayjs';
-import $url from '@/sheep/url';
+import { $url } from '@jinghelvdi/core';
 import { formatDate } from '@jinghelvdi/core';
 
 /**
