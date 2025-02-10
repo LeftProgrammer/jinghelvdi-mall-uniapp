@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const PointApi = {
   // 获得积分商城活动分页

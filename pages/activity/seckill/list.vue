@@ -149,7 +149,7 @@
   import { computed, nextTick, reactive, ref } from 'vue';
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
-  import { useDurationTime } from '@/sheep/hooks/useGoods';
+  import { useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
   import SeckillApi from '@/sheep/api/promotion/seckill';
   import dayjs from 'dayjs';
   import { TimeStatusEnum } from '@jinghelvdi/core/src/util/const';

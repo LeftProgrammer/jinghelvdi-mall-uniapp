@@ -16,8 +16,10 @@ export { $helper, $url };
 // 导出子模块，支持按需导入
 export * from './helper';
 export * from './url';
+export * from './config';
 export * from './validate';
 export * from './util'; 
 export * from './request';
+export * from './hooks';
 
 export default sheep;

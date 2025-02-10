@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const CouponApi = {
   // 获得优惠劵模板列表

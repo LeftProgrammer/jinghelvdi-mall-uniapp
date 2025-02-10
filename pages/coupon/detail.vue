@@ -150,7 +150,7 @@
   import { reactive } from 'vue';
   import _ from 'lodash-es';
   import CouponApi from '@/sheep/api/promotion/coupon';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import SpuApi from '@/sheep/api/product/spu';
   import CategoryApi from '@/sheep/api/product/category';
   import { resetPagination } from '@jinghelvdi/core/src/util/index';

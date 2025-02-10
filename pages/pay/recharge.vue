@@ -45,7 +45,7 @@
   import { computed, reactive } from 'vue';
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import PayWalletApi from '@/sheep/api/pay/wallet';
   import { WxaSubscribeTemplate } from '@jinghelvdi/core/src/util/const';
 

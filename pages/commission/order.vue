@@ -77,7 +77,7 @@
   import _ from 'lodash-es';
   import { resetPagination } from '@jinghelvdi/core/src/util/index';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '../../sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;
   const headerBg = sheep.$url.css('/static/img/shop/user/withdraw_bg.png');

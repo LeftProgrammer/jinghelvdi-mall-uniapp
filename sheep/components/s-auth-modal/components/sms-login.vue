@@ -62,7 +62,7 @@
   import { ref, reactive, unref } from 'vue';
   import sheep from '@/sheep';
   import { code, mobile } from '@jinghelvdi/core/src/validate/form';
-  import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '@/sheep/hooks/useModal';
+  import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '@jinghelvdi/core/src/hooks/useModal';
   import AuthUtil from '@/sheep/api/member/auth';
 
   const smsLoginRef = ref(null);

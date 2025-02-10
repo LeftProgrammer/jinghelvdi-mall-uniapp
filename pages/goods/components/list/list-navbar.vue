@@ -46,7 +46,7 @@
 <script setup>
   import { reactive } from 'vue';
   import sheep from '@/sheep';
-  import { showMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
 
   const sys_statusBar = sheep.$platform.device.statusBarHeight;
   const sys_navBar = sheep.$platform.navbar;

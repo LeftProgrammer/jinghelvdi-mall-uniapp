@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const SeckillApi = {
   // 获得秒杀时间段列表

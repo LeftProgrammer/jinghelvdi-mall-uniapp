@@ -45,7 +45,7 @@
   import { onPageScroll } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
   import throttle from '@jinghelvdi/core/throttle.js';
-  import { showMenuTools, closeMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
 
   const sys_statusBar = sheep.$platform.device.statusBarHeight;
   const sys_navBar = sheep.$platform.navbar;

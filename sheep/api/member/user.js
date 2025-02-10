@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const UserApi = {
   // 获得基本信息

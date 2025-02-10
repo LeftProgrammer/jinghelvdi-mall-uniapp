@@ -42,7 +42,7 @@
 	 */
 	import { computed } from 'vue';
 	import sheep from '@/sheep';
-	import { fen2yuan } from '../../hooks/useGoods';
+	import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
 	// 接收参数
 	const props = defineProps({

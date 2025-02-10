@@ -109,7 +109,7 @@
   import changeMobile from './components/change-mobile.vue';
   import changePassword from './components/change-password.vue';
   import mpAuthorization from './components/mp-authorization.vue';
-  import { closeAuthModal, showAuthModal } from '@/sheep/hooks/useModal';
+  import { closeAuthModal, showAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
 
   const modalStore = sheep.$store('modal');
   // 授权弹窗类型

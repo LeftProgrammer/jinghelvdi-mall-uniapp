@@ -143,7 +143,7 @@
     fen2yuan,
     formatAfterSaleStatusDescription,
     handleAfterSaleButtons,
-  } from '@/sheep/hooks/useGoods';
+  } from '@jinghelvdi/core/src/hooks/useGoods';
   import AfterSaleApi from '@/sheep/api/trade/afterSale';
 
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;

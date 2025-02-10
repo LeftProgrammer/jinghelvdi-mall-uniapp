@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const ActivityApi = {
   // 获得单个商品，进行中的拼团、秒杀、砍价活动信息

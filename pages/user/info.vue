@@ -184,7 +184,7 @@
   import { computed, reactive, onBeforeMount } from 'vue';
   import sheep from '@/sheep';
   import { clone } from 'lodash-es';
-  import { showAuthModal } from '@/sheep/hooks/useModal';
+  import { showAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
   import FileApi from '@/sheep/api/infra/file';
   import UserApi from '@/sheep/api/member/user';
 

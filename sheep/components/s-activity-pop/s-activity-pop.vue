@@ -75,9 +75,9 @@
 </template>
 <script setup>
   import sheep from '@/sheep';
-  import { getRewardActivityRuleGroupDescriptions } from '@/sheep/hooks/useGoods';
+  import { getRewardActivityRuleGroupDescriptions } from '@jinghelvdi/core/src/hooks/useGoods';
   import { computed, reactive, watch, ref } from 'vue';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   const props = defineProps({
     modelValue: {
       type: Object,

@@ -95,7 +95,7 @@
 <script setup>
   import { computed, reactive, watch } from 'vue';
   import sheep from '@/sheep';
-  import { formatStock, convertProductPropertyList, fen2yuan } from '@/sheep/hooks/useGoods';
+  import { formatStock, convertProductPropertyList, fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const emits = defineEmits(['change', 'addCart', 'buy', 'close']);
   const props = defineProps({

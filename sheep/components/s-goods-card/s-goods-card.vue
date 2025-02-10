@@ -145,7 +145,7 @@
   import sheep from '@/sheep';
   import SpuApi from '@/sheep/api/product/spu';
   import OrderApi from '@/sheep/api/trade/order';
-  import { appendSettlementProduct } from '@/sheep/hooks/useGoods';
+  import { appendSettlementProduct } from '@jinghelvdi/core/src/hooks/useGoods';
 
   // 布局类型
   const LayoutTypeEnum = {

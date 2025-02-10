@@ -58,7 +58,7 @@
   import {
     showShareModal,
     showAuthModal,
-  } from '@/sheep/hooks/useModal';
+  } from '@jinghelvdi/core/src/hooks/useModal';
 
   // 用户信息
   const userInfo = computed(() => sheep.$store('user').userInfo);

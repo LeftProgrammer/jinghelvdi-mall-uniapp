@@ -24,7 +24,7 @@
 <script setup>
   import { reactive, computed } from 'vue';
   import sheep from '@/sheep';
-  import { showMenuTools, closeMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
 
   const show = computed(() => sheep.$store('modal').menu);
 

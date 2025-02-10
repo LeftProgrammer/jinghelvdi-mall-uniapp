@@ -40,7 +40,8 @@
     "pinia": "^2.1.7"
   },
   "dependencies": {
-    "luch-request": "^3.0.8"
+    "luch-request": "^3.0.8",
+    "dayjs": "^1.11.7"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -71,7 +71,7 @@
   import { computed, ref, reactive, unref } from 'vue';
   import sheep from '@/sheep';
   import { code, mobile } from '@jinghelvdi/core/src/validate/form';
-  import { closeAuthModal, getSmsCode, getSmsTimer } from '@/sheep/hooks/useModal';
+  import { closeAuthModal, getSmsCode, getSmsTimer } from '@jinghelvdi/core/src/hooks/useModal';
   import UserApi from '@/sheep/api/member/user';
 
   const changeMobileRef = ref(null);

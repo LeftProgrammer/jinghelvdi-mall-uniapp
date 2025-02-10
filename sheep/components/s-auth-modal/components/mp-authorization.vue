@@ -52,7 +52,7 @@
 <script setup>
   import { computed, ref, reactive } from 'vue';
   import sheep from '@/sheep';
-  import { closeAuthModal } from '@/sheep/hooks/useModal';
+  import { closeAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
   import FileApi from '@/sheep/api/infra/file';
   import UserApi from '@/sheep/api/member/user';
 

@@ -3,7 +3,7 @@ import $share from '@/sheep/platform/share';
 import { clone, cloneDeep } from 'lodash-es';
 import cart from './cart';
 import app from './app';
-import { showAuthModal } from '@/sheep/hooks/useModal';
+import { showAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
 import UserApi from '@/sheep/api/member/user';
 import PayWalletApi from '@/sheep/api/pay/wallet';
 import OrderApi from '@/sheep/api/trade/order';

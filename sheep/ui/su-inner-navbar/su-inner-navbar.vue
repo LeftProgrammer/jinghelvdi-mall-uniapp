@@ -65,7 +65,7 @@
   import { computed, reactive, onBeforeMount, ref } from 'vue';
   import sheep from '@/sheep';
   import { onPageScroll } from '@dcloudio/uni-app';
-  import { showMenuTools, closeMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
 
   // 本地数据
   const state = reactive({

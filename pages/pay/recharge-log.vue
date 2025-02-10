@@ -58,7 +58,7 @@
   import _ from 'lodash-es';
   import PayWalletApi from '@/sheep/api/pay/wallet';
   import sheep from '@/sheep';
-  import { fen2yuan } from '../../sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const state = reactive({
     pagination: {

@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-  import { fen2yuan, formatOrderColor, formatOrderStatus } from '@/sheep/hooks/useGoods';
+  import { fen2yuan, formatOrderColor, formatOrderStatus } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const props = defineProps({
     orderData: {

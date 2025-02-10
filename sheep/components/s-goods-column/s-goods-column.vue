@@ -449,7 +449,7 @@
     formatSales,
     formatStock,
     getRewardActivityRuleItemDescriptions,
-  } from '@/sheep/hooks/useGoods';
+  } from '@jinghelvdi/core/src/hooks/useGoods';
   import { isArray } from 'lodash-es';
   import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 

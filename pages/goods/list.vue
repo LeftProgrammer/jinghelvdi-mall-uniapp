@@ -125,7 +125,7 @@
   import { resetPagination } from '@jinghelvdi/core/src/util/index';
   import SpuApi from '@/sheep/api/product/spu';
   import OrderApi from '@/sheep/api/trade/order';
-  import { appendSettlementProduct } from '@/sheep/hooks/useGoods';
+  import { appendSettlementProduct } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const sys_navBar = sheep.$platform.navbar;
   const emits = defineEmits(['close', 'change']);

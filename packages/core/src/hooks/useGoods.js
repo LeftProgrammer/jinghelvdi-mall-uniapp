@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import dayjs from 'dayjs';
-import { $url } from '@jinghelvdi/core';
-import { formatDate } from '@jinghelvdi/core';
+import $url from '../url';
+import { formatDate } from '../util';
 
 /**
  * 格式化销量

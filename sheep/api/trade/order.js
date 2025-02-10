@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 import { isEmpty } from '@jinghelvdi/core/src/helper/utils';
 
 const OrderApi = {

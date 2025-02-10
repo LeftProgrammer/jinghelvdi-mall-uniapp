@@ -55,7 +55,7 @@
   import _ from 'lodash-es';
   import dayjs from 'dayjs';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '../../../sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const state = reactive({
     loadStatus: '',

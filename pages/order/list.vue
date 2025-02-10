@@ -126,7 +126,7 @@
     formatOrderColor,
     formatOrderStatus,
     handleOrderButtons,
-  } from '@/sheep/hooks/useGoods';
+  } from '@jinghelvdi/core/src/hooks/useGoods';
   import sheep from '@/sheep';
   import _ from 'lodash-es';
   import { isEmpty } from 'lodash-es';

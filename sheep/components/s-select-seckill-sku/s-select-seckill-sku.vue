@@ -102,7 +102,7 @@
   // 按钮状态： active,nostock
   import { computed, reactive, watch } from 'vue';
   import sheep from '@/sheep';
-  import { convertProductPropertyList, fen2yuan } from '@/sheep/hooks/useGoods';
+  import { convertProductPropertyList, fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import { isEmpty, min } from 'lodash-es';
   import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 

@@ -1,5 +1,5 @@
 import $store from '@/sheep/store';
-import { showAuthModal, showShareModal } from '@/sheep/hooks/useModal';
+import { showAuthModal, showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
 import { isNumber, isString, isEmpty, startsWith, isObject, isNil, clone } from 'lodash-es';
 import throttle from '@jinghelvdi/core/src/helper/throttle';
 

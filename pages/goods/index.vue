@@ -219,7 +219,7 @@
     fen2yuanSimple,
     formatDiscountPercent,
     getRewardActivityRuleItemDescriptions,
-  } from '@/sheep/hooks/useGoods';
+  } from '@jinghelvdi/core/src/hooks/useGoods';
   import detailNavbar from './components/detail/detail-navbar.vue';
   import detailCellSku from './components/detail/detail-cell-sku.vue';
   import detailTabbar from './components/detail/detail-tabbar.vue';

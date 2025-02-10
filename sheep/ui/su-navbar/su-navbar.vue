@@ -92,7 +92,7 @@
 <script setup>
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { showMenuTools, closeMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
   import { computed, ref } from 'vue';
 
   /**

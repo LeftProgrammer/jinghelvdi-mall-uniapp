@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 const PayChannelApi = {
   // 获得指定应用的开启的支付渠道编码列表

@@ -1,4 +1,4 @@
-import request from '@/sheep/request';
+import request from '@jinghelvdi/core/src/request/index';
 
 // TODO 芋艿：小程序直播还不支持
 export default {

@@ -268,7 +268,7 @@
     formatOrderStatus,
     formatOrderStatusDescription,
     handleOrderButtons,
-  } from '@/sheep/hooks/useGoods';
+  } from '@jinghelvdi/core/src/hooks/useGoods';
   import OrderApi from '@/sheep/api/trade/order';
   import DeliveryApi from '@/sheep/api/trade/delivery';
   import PickUpVerify from '@/pages/order/pickUpVerify.vue';

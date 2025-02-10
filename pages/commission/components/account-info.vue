@@ -51,7 +51,7 @@
   import sheep from '@/sheep';
   import { computed, reactive, onMounted } from 'vue';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const userInfo = computed(() => sheep.$store('user').userInfo);
 

@@ -69,7 +69,7 @@
 
 <script setup>
   import { computed } from 'vue';
-  import { fen2yuan } from '../../hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import sheep from '../../index';
 
   const isDisable = computed(() => {

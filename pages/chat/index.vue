@@ -54,7 +54,7 @@
   } from '@/pages/chat/util/constants';
   import FileApi from '@/sheep/api/infra/file';
   import KeFuApi from '@/sheep/api/promotion/kefu';
-  import { useWebSocket } from '@/sheep/hooks/useWebSocket';
+  import { useWebSocket } from '@jinghelvdi/core/src/hooks/useWebSocket';
   import { jsonParse } from '@jinghelvdi/core/src/util/index';
 
   const sys_navBar = sheep.$platform.navbar;

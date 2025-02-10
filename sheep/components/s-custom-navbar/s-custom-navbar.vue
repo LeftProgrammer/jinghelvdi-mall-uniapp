@@ -52,7 +52,7 @@
   import sheep from '@/sheep';
   import Navbar from './components/navbar.vue';
   import NavbarItem from './components/navbar-item.vue';
-  import { showMenuTools } from '@/sheep/hooks/useModal';
+  import { showMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
 
   const props = defineProps({
     data: {

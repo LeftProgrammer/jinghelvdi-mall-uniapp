@@ -156,7 +156,7 @@
   import detailCommentCard from './components/detail/detail-comment-card.vue';
   import detailContentCard from './components/detail/detail-content-card.vue';
   import grouponCardList from './components/groupon/groupon-card-list.vue';
-  import { useDurationTime, formatGoodsSwiper, fen2yuan } from '@/sheep/hooks/useGoods';
+  import { useDurationTime, formatGoodsSwiper, fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import CombinationApi from '@/sheep/api/promotion/combination';
   import SpuApi from '@/sheep/api/product/spu';
   import { SharePageEnum } from '@jinghelvdi/core/src/util/const';

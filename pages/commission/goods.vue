@@ -60,10 +60,10 @@
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import { reactive } from 'vue';
   import _ from 'lodash-es';
-  import { showShareModal } from '@/sheep/hooks/useModal';
+  import { showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
   import SpuApi from '@/sheep/api/product/spu';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
 
   const state = reactive({
     pagination: {

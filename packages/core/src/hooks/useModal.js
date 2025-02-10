@@ -2,7 +2,7 @@ import $store from '@/sheep/store';
 import { $helper } from '@jinghelvdi/core';
 import dayjs from 'dayjs';
 import { ref } from 'vue';
-import test from '@jinghelvdi/core/src/helper/test.js';
+import test from '../helper/test.js';
 import AuthUtil from '@/sheep/api/member/auth';
 
 // 打开授权弹框

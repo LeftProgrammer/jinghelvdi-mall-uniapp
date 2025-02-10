@@ -204,8 +204,8 @@
   import { computed, reactive } from 'vue';
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { fen2yuan, useDurationTime } from '@/sheep/hooks/useGoods';
-  import { showShareModal } from '@/sheep/hooks/useModal';
+  import { fen2yuan, useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
   import { isEmpty } from 'lodash-es';
   import CombinationApi from '@/sheep/api/promotion/combination';
   import SpuApi from '@/sheep/api/product/spu';

@@ -107,7 +107,7 @@
   import sheep from '@/sheep';
   import SpuApi from '@/sheep/api/product/spu';
   import { computed, reactive } from 'vue';
-  import { fen2yuan } from '@/sheep/hooks/useGoods';
+  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import { isEmpty } from '@jinghelvdi/core/src/helper/utils';
 
   const sys_navBar = sheep.$platform.navbar;
