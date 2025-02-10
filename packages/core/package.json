@@ -21,16 +21,6 @@
       "require": "./src/*"
     }
   },
-  "peerDependencies": {
-    "vue": "^3.3.0",
-    "pinia": "^2.1.7"
-  },
-  "scripts": {
-    "build": "vite build",
-    "test": "vitest",
-    "lint": "eslint . --ext .js,.vue",
-    "prepublish": "npm run build"
-  },
   "files": [
     "src",
     "types",
@@ -38,6 +28,19 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest",
+    "lint": "eslint . --ext .js,.vue",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0",
+    "pinia": "^2.1.7"
+  },
+  "dependencies": {
+    "luch-request": "^3.0.8"
   },
   "engines": {
     "node": ">=16.0.0"

@@ -18,5 +18,6 @@ export * from './helper';
 export * from './url';
 export * from './validate';
 export * from './util'; 
+export * from './request';
 
 export default sheep;
