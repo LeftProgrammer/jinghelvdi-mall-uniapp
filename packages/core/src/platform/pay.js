@@ -1,7 +1,7 @@
 import sheep from '@/sheep';
 import { $helper, $router, $platform } from '@jinghelvdi/core'
 // #ifdef H5
-import $wxsdk from '@/packages/core/src/libs/sdk-h5-weixin';
+import $wxsdk from '../libs/sdk-h5-weixin';
 // #endif
 import { getRootUrl } from '../helper';
 import PayOrderApi from '@/sheep/api/pay/order';

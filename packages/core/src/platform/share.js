@@ -4,7 +4,7 @@ import BrokerageApi from '@/sheep/api/trade/brokerage';
 import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
 // #ifdef H5
-import $wxsdk from '@/packages/core/src/libs/sdk-h5-weixin';
+import $wxsdk from '../libs/sdk-h5-weixin';
 // #endif
 
 // 设置分享的平台渠道: 1=H5,2=微信公众号网页,3=微信小程序,4=App,...按需扩展
