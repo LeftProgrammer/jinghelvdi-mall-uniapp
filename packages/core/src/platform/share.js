@@ -1,6 +1,6 @@
-import { $url, $router, $platform, $store } from '@jinghelvdi/core';
+import { $url, $router, $platform, $store } from '../index';
+import { SharePageEnum } from '../util/const';
 import BrokerageApi from '@/sheep/api/trade/brokerage';
-import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
 // #ifdef H5
 import $wxsdk from '../libs/sdk-h5-weixin';

@@ -35,9 +35,9 @@
 </template>
 
 <script>
-  import { guid } from '@jinghelvdi/core';
-  import zIndexConfig from '@jinghelvdi/core/src/config/zIndex';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
+  import zIndexConfig from '../../config/zIndex';
+  import { guid } from '../../helper/index';
 
   export default {
     name: 'suPopover',

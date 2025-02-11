@@ -1,4 +1,4 @@
-import { $helper, $router, $platform } from '@jinghelvdi/core'
+import { $helper, $router, $platform } from '../index'
 // #ifdef H5
 import $wxsdk from '../libs/sdk-h5-weixin';
 // #endif

@@ -105,7 +105,7 @@
    *
    */
   import { computed, reactive } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   // 数据
   const state = reactive({

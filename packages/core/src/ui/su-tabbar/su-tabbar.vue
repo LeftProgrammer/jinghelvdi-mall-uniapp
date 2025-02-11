@@ -41,9 +41,8 @@
    * @property {Object}			customStyle			定义需要用到的外部样式
    *
    */
-
+  import sheep from '../../index';
   import { deepMerge, addStyle, sleep } from '@jinghelvdi/core';
-  import sheep from '@/sheep';
 
   export default {
     name: 'su-tabbar',

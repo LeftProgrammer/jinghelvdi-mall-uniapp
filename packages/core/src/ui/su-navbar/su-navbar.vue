@@ -90,10 +90,10 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
   import { computed, ref } from 'vue';
+  import sheep from '../../index';
+  import { showMenuTools, closeMenuTools } from '../../hooks/useModal';
 
   /**
    * NavBar 自定义导航栏

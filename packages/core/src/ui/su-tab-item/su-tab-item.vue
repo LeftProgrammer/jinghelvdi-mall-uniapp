@@ -33,7 +33,6 @@
    * 基础组件 - uiTabItem
    */
   import { computed, onMounted, getCurrentInstance, inject } from 'vue';
-  import sheep from '@/sheep';
   const vm = getCurrentInstance();
 
   const props = defineProps({

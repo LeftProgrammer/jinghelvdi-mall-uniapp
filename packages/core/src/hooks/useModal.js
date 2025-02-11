@@ -1,6 +1,6 @@
-import { $store, $helper } from '@jinghelvdi/core';
 import dayjs from 'dayjs';
 import { ref } from 'vue';
+import { $store, $helper } from '../index';
 import test from '../helper/test.js';
 import AuthUtil from '@/sheep/api/member/auth';
 

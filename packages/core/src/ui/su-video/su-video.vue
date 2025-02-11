@@ -41,11 +41,10 @@
    *
    *
    */
-
   import { reactive, nextTick, getCurrentInstance } from 'vue';
-  import sheep from '@/sheep';
-  const vm = getCurrentInstance();
+  import sheep from '../../index';
 
+  const vm = getCurrentInstance();
   // 数据
   const state = reactive({
     // #ifdef APP-PLUS

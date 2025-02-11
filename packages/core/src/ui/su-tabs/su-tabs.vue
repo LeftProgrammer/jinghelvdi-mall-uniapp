@@ -72,7 +72,7 @@
 </template>
 
 <script>
-  import { deepMerge, addStyle, addUnit, sleep, getPx, sys } from '@jinghelvdi/core';
+  import { deepMerge, addStyle, addUnit, sleep, getPx, sys } from '../../helper';
   // #ifdef APP-NVUE
   const animation = uni.requireNativePlugin('animation');
   const dom = uni.requireNativePlugin('dom');

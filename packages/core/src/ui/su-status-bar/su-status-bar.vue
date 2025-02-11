@@ -4,7 +4,7 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   const statusBarHeight = sheep.$platform.device.statusBarHeight + 'px';
 </script>

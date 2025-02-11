@@ -83,7 +83,7 @@
    * @event {Function} change 打开关闭弹窗触发，e={show: false}
    * @event {Function} maskClick 点击遮罩触发
    */
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   export default {
     name: 'SuPopup',

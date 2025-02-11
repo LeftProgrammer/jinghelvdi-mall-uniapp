@@ -48,7 +48,7 @@
 <script setup>
   import { onPageScroll } from '@dcloudio/uni-app';
   import { getCurrentInstance, unref, onMounted, reactive, nextTick, computed } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   const { safeAreaInsets } = sheep.$platform.device;
 
   const vm = getCurrentInstance();

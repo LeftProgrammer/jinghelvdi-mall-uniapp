@@ -87,7 +87,7 @@
    */
 
   import { reactive, computed } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import { clone } from 'lodash-es';
 
   // 数据

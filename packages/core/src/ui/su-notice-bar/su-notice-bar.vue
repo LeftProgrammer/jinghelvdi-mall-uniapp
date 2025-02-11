@@ -85,7 +85,7 @@
 </template>
 
 <script>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   // #ifdef APP-NVUE
   const dom = weex.requireModule('dom');
   const animation = weex.requireModule('animation');
