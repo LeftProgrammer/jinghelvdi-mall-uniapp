@@ -442,16 +442,16 @@
    *
    */
   import { computed, getCurrentInstance, nextTick, onMounted } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import {
     fen2yuan,
     formatExchange,
     formatSales,
     formatStock,
     getRewardActivityRuleItemDescriptions,
-  } from '@jinghelvdi/core/src/hooks/useGoods';
+  } from '../../hooks/useGoods';
+  import { PromotionActivityTypeEnum } from '../../util/const';
   import { isArray } from 'lodash-es';
-  import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 
   // 接收参数
   const props = defineProps({

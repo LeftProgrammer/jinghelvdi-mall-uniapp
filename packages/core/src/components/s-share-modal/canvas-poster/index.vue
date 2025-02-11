@@ -47,7 +47,7 @@
    * @property {Object}  shareInfo 分享信息
    */
   import { reactive, ref, unref } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../../index';
   import { getPosterData } from '@jinghelvdi/core/src/components/s-share-modal/canvas-poster/poster/index';
 
   const props = defineProps({

@@ -41,8 +41,8 @@
 	 * 装修组件 - 订单菜单组
 	 */
 	import { computed } from 'vue';
-	import sheep from '@/sheep';
-	import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+	import sheep from '../../index';
+	import { fen2yuan } from '../../hooks/useGoods';
 
 	// 接收参数
 	const props = defineProps({

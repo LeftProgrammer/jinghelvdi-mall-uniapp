@@ -42,7 +42,7 @@
   /**
    * cell
    */
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   const props = defineProps({
     data: {
       type: Object,

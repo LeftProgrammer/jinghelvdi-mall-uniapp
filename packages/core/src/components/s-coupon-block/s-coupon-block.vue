@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-	import sheep from '@/sheep';
+	import sheep from '../../index';
 	import CouponApi from '@/sheep/api/promotion/coupon';
 	import {
 		ref,
@@ -35,11 +35,11 @@
 	import {
 		CouponTemplateValidityTypeEnum,
 		PromotionDiscountTypeEnum
-	} from "@jinghelvdi/core/src/util/const";
+	} from "../../util/const";
 	import {
 		floatToFixed2,
 		formatDate
-	} from "@jinghelvdi/core/src/util/index";
+	} from "../../util/index";
 
 	const props = defineProps({
 		data: {

@@ -61,7 +61,7 @@
    * 模板组件 - 提供页面公共组件，属性，方法
    */
   import { computed, onMounted } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import { isEmpty } from 'lodash-es';
   // #ifdef MP-WEIXIN
   import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app';

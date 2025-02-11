@@ -34,8 +34,8 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
   import { computed } from 'vue';
+  import sheep from '../../../index';
 
   // 接收参数
   const props = defineProps({

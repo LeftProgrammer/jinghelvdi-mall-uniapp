@@ -65,9 +65,9 @@
    * 分享弹窗
    */
   import { ref, unref, reactive, computed } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import canvasPoster from './canvas-poster/index.vue';
-  import { closeShareModal, showAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
+  import { closeShareModal, showAuthModal } from '../../hooks/useModal';
 
   const show = computed(() => sheep.$store('modal').share);
   const shareConfig = computed(() => sheep.$store('app').platform.share);

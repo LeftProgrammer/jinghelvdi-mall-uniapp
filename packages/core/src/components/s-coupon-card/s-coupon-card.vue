@@ -14,8 +14,8 @@
 	/**
 	 * 装修组件 - 优惠券菜单
 	 */
-	import sheep from '@/sheep';
 	import { computed } from 'vue';
+	import sheep from '../../index';
 
 	// 接收参数
 	const props = defineProps({

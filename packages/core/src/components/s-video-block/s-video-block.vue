@@ -11,8 +11,8 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
-  import { guid } from '@jinghelvdi/core';
+  import sheep from '../../index';
+  import { guid } from '../../helper/index';
   const props = defineProps({
     data: {
       type: Object,

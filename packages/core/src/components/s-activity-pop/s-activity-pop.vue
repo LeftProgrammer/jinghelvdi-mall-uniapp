@@ -74,10 +74,10 @@
   </su-popup>
 </template>
 <script setup>
-  import sheep from '@/sheep';
-  import { getRewardActivityRuleGroupDescriptions } from '@jinghelvdi/core/src/hooks/useGoods';
   import { computed, reactive, watch, ref } from 'vue';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import sheep from '../../index';
+  import { getRewardActivityRuleGroupDescriptions } from '../../hooks/useGoods';
+  import { fen2yuan } from '../../hooks/useGoods';
   const props = defineProps({
     modelValue: {
       type: Object,

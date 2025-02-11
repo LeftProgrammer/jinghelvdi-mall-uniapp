@@ -8,8 +8,7 @@
    * 容器组件 - 装修组件的样式容器
    */
   import { computed, provide, unref } from 'vue';
-  import sheep from '@/sheep';
-
+  import sheep from '../../index';
   const props = defineProps({
     styles: {
       type: Object,

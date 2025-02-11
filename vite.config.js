@@ -30,5 +30,17 @@ export default (command, mode) => {
 				overlay: true,
 			},
 		},
+		optimizeDeps: {
+			include: ['weixin-js-sdk'],
+			// 强制预构建这些依赖
+			force: true
+		},
+		build: {
+			commonjsOptions: {
+				include: [/weixin-js-sdk/],
+				// 转换 CommonJS 模块
+				transformMixedEsModules: true
+			}
+		}
 	};
 };

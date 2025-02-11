@@ -31,7 +31,7 @@
  */
 
   import { computed, inject, unref } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   // 参数
   const props = defineProps({

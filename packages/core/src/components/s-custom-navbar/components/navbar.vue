@@ -57,7 +57,7 @@
    */
 
   import { computed, reactive, onBeforeMount } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../../index';
 
   // 本地数据
   const state = reactive({

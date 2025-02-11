@@ -142,10 +142,10 @@
    * 商品卡片
    */
   import { computed, reactive, onMounted } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import SpuApi from '@/sheep/api/product/spu';
   import OrderApi from '@/sheep/api/trade/order';
-  import { appendSettlementProduct } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { appendSettlementProduct } from '../../hooks/useGoods';
 
   // 布局类型
   const LayoutTypeEnum = {

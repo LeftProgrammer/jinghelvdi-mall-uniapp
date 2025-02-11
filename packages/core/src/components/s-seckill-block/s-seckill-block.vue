@@ -142,7 +142,7 @@
    * 商品卡片
    */
   import { computed, onMounted, reactive, ref } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import SeckillApi from '@/sheep/api/promotion/seckill';
   import SpuApi from '@/sheep/api/product/spu';
 

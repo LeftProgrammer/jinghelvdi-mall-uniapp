@@ -101,10 +101,10 @@
    */
   // 按钮状态： active,nostock
   import { computed, reactive, watch } from 'vue';
-  import sheep from '@/sheep';
-  import { convertProductPropertyList, fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import sheep from '../../index';
+  import { convertProductPropertyList, fen2yuan } from '../../hooks/useGoods';
+  import { PromotionActivityTypeEnum } from '../../util/const';
   import { isEmpty, min } from 'lodash-es';
-  import { PromotionActivityTypeEnum } from '@jinghelvdi/core/src/util/const';
 
   const emits = defineEmits(['change', 'addCart', 'buy', 'close']);
   const props = defineProps({

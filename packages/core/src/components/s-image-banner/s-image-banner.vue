@@ -14,7 +14,7 @@
 
 <script setup>
   import { computed } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   // 轮播图
   const props = defineProps({

@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-	import sheep from '@/sheep';
+	import sheep from '../../index';
 	import {
 		computed
 	} from 'vue';

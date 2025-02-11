@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   /**
    * 容器组件 - 装修组件的样式容器
    */

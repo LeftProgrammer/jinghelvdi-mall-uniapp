@@ -36,7 +36,7 @@
 </template>
 <script setup>
   import { computed, reactive } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   /**
    * 直播卡片
    *

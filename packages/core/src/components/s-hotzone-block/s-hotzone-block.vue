@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   // 接收参数
   const props = defineProps({

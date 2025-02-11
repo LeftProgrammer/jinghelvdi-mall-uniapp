@@ -49,10 +49,10 @@
    * @property {String} src                    - 页面背景图片
    */
   import { computed, unref } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import Navbar from './components/navbar.vue';
   import NavbarItem from './components/navbar-item.vue';
-  import { showMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
+  import { showMenuTools } from '../../hooks/useModal';
 
   const props = defineProps({
     data: {

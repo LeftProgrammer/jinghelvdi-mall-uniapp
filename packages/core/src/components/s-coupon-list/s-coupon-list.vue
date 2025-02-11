@@ -69,8 +69,8 @@
 
 <script setup>
   import { computed } from 'vue';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
   import sheep from '../../index';
+  import { fen2yuan } from '../../hooks/useGoods';
 
   const isDisable = computed(() => {
     if (props.type === 'coupon') {

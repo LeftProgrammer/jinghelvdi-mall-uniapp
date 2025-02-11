@@ -54,7 +54,7 @@
 </template>
 <script setup>
   import { reactive, onMounted } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
 
   const state = reactive({
     liveList: [],

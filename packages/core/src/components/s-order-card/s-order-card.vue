@@ -24,8 +24,8 @@
   /**
    * 装修组件 - 订单菜单组
    */
-  import sheep from '@/sheep';
   import { computed } from 'vue';
+  import sheep from '../../index';
 
   const orderMap = [
     {

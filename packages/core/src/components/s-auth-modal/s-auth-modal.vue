@@ -102,14 +102,14 @@
 
 <script setup>
   import { computed, reactive, ref } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import accountLogin from './components/account-login.vue';
   import smsLogin from './components/sms-login.vue';
   import resetPassword from './components/reset-password.vue';
   import changeMobile from './components/change-mobile.vue';
   import changePassword from './components/change-password.vue';
   import mpAuthorization from './components/mp-authorization.vue';
-  import { closeAuthModal, showAuthModal } from '@jinghelvdi/core/src/hooks/useModal';
+  import { closeAuthModal, showAuthModal } from '../../hooks/useModal';
 
   const modalStore = sheep.$store('modal');
   // 授权弹窗类型

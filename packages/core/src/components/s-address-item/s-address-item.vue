@@ -44,7 +44,7 @@
    *
    * @slot 								 - 默认插槽
    */
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import { isEmpty } from 'lodash-es';
   const props = defineProps({
     item: {

@@ -20,7 +20,7 @@
    * 装修组件  - 通知栏
    *
    */
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   const props = defineProps({
     data: {
       type: Object,

@@ -25,9 +25,9 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import { computed, ref } from 'vue';
-  import { saveAdvHistory } from '@jinghelvdi/core/src/hooks/useModal';
+  import { saveAdvHistory } from '../../hooks/useModal';
 
   // 定义属性
   const props = defineProps({

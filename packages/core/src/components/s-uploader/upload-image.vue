@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   export default {
     name: 'uploadImage',
     emits: ['uploadFiles', 'choose', 'delFile'],

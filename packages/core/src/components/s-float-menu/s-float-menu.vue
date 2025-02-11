@@ -17,10 +17,9 @@
   /**
    * 悬浮按钮
    */
-
-  import sheep from '@/sheep';
   import { reactive, ref, unref } from 'vue';
   import { onBackPress } from '@dcloudio/uni-app';
+  import sheep from '../../index';
 
   // 定义属性
   const props = defineProps({

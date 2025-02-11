@@ -54,11 +54,11 @@
    *
    */
   import { computed } from 'vue';
-  import sheep from '@/sheep';
+  import sheep from '../../index';
   import {
     showShareModal,
     showAuthModal,
-  } from '@jinghelvdi/core/src/hooks/useModal';
+  } from '../../hooks/useModal';
 
   // 用户信息
   const userInfo = computed(() => sheep.$store('user').userInfo);

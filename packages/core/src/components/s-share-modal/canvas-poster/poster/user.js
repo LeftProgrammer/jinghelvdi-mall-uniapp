@@ -1,4 +1,4 @@
-import sheep from '@/sheep';
+import sheep from '../../../../index';
 import { formatImageUrlProtocol, getWxaQrcode } from './index';
 
 const user = async (poster) => {

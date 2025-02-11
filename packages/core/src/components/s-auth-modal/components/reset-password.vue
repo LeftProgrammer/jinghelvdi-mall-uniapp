@@ -70,9 +70,9 @@
 
 <script setup>
   import { computed, ref, reactive, unref } from 'vue';
-  import sheep from '@/sheep';
-  import { code, mobile, password } from '@jinghelvdi/core/src/validate/form';
-  import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '@jinghelvdi/core/src/hooks/useModal';
+  import sheep from '../../../index';
+  import { code, mobile, password } from '../../../validate/form';
+  import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
   import UserApi from '@/sheep/api/member/user';
 
   const resetPasswordRef = ref(null);

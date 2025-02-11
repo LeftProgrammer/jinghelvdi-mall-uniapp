@@ -52,9 +52,9 @@
 </template>
 
 <script setup>
-  import sheep from '@/sheep';
   import { computed } from 'vue';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import sheep from '../../index';
+  import { fen2yuan } from '../../hooks/useGoods';
   /**
    * 订单卡片
    *
