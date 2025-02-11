@@ -48,7 +48,7 @@
    */
   import { reactive, ref, unref } from 'vue';
   import sheep from '@/sheep';
-  import { getPosterData } from '@/sheep/components/s-share-modal/canvas-poster/poster';
+  import { getPosterData } from '@jinghelvdi/core/src/components/s-share-modal/canvas-poster/poster/index';
 
   const props = defineProps({
     show: {

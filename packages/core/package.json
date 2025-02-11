@@ -38,11 +38,11 @@
   "peerDependencies": {
     "vue": "^3.3.0",
     "pinia": "^2.1.7",
-    "pinia-plugin-persist-uni": "^1.0.0"
+    "pinia-plugin-persist-uni": "^1.0.0",
+    "dayjs": "^1.11.7"
   },
   "dependencies": {
     "luch-request": "^3.0.8",
-    "dayjs": "^1.11.7",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "weixin-js-sdk": "^1.6.0"

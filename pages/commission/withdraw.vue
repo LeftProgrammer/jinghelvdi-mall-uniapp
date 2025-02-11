@@ -169,7 +169,7 @@
   import TradeConfigApi from '@/sheep/api/trade/config';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
   import DictApi from '@/sheep/api/system/dict';
-  import SLayout from '@/sheep/components/s-layout/s-layout.vue';
+  import SLayout from '@jinghelvdi/core/src/components/s-layout/s-layout.vue';
 
   const headerBg = sheep.$url.css('/static/img/shop/user/withdraw_bg.png');
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;

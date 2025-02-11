@@ -231,7 +231,7 @@
   import SpuApi from '@/sheep/api/product/spu';
 
   onPageScroll(() => {});
-  import countDown from '@/sheep/components/countDown/index.vue';
+  import countDown from '@jinghelvdi/core/src/components/countDown/index.vue';
   import OrderApi from '@/sheep/api/trade/order';
   import activity from '@/sheep/api/promotion/activity';
   import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
