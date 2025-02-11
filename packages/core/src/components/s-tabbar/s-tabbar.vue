@@ -36,7 +36,7 @@
 <script setup>
   import { computed, unref } from 'vue';
   import sheep from '../../index';
-  import SuTabbar from '@/sheep/ui/su-tabbar/su-tabbar.vue';
+  import SuTabbar from '../../ui/su-tabbar/su-tabbar.vue';
 
   const tabbar = computed(() => {
     return sheep.$store('app').template.basic?.tabbar;

@@ -3,7 +3,7 @@
 		"autoscan": true,
 		"custom": {
 			"^s-(.*)": "@jinghelvdi/core/src/components/s-$1/s-$1.vue",
-			"^su-(.*)": "@/sheep/ui/su-$1/su-$1.vue"
+			"^su-(.*)": "@jinghelvdi/core/src/ui/su-$1/su-$1.vue"
 		}
 	},
 	"pages": [{
