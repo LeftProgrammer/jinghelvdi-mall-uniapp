@@ -52,7 +52,10 @@
   import sheep from '../../../index';
   import { mobile, password } from '../../../validate/form';
   import { showAuthModal, closeAuthModal } from '../../../hooks/useModal';
-  import AuthUtil from '@/sheep/api/member/auth';
+  import { getService } from '@jinghelvdi/core/src/api/registry';
+  import { ServiceNames } from '@jinghelvdi/core/src/api/contracts';
+
+  const authService = getService(ServiceNames.AUTH);
 
   const accountLoginRef = ref(null);
 
@@ -95,7 +98,7 @@
     }
 
     // 提交数据
-    const { code, data } = await AuthUtil.login(state.model);
+    const { code, data } = await authService.login(state.model);
     if (code === 0) {
       closeAuthModal();
     }
