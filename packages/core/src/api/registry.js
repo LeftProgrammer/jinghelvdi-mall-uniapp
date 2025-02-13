@@ -1,4 +1,3 @@
-// packages/core/src/api/registry.js
 import {
   ServiceNames,
   AuthServiceContract,
@@ -19,37 +18,29 @@ const ServiceContracts = {
   [ServiceNames.SOCIAL]: SocialServiceContract,
 };
 
-// 使用模块级别的变量保存单例实例
-const registry = {
-  services: new Map()
+// 使用全局对象确保单例
+const getRegistry = () => {
+  // 在全局对象上存储单例
+  const globalObj = typeof window !== 'undefined' ? window : global;
+  const KEY = Symbol.for('SERVICE_REGISTRY');
+  
+  if (!globalObj[KEY]) {
+    const registry = {
+      services: new Map(),
+      initialized: false
+    };
+    
+    globalObj[KEY] = registry;
+  }
+  
+  return globalObj[KEY];
 };
 
-/**
-   * 验证服务实现是否符合契约
-   * @private
-   */
-export function validateImplementation(serviceName, implementation) {
-  const contract = ServiceContracts[serviceName];
-  if (!contract) {
-    console.warn(`[Registry] No contract found for service: ${serviceName}`);
-    return true; // 没有契约定义时默认通过
-  }
-
-  for (const [methodName, type] of Object.entries(contract)) {
-    if (type === 'function' && typeof implementation[methodName] !== 'function') {
-      console.error(`[Registry] Service ${serviceName} missing required method: ${methodName}`);
-      return false;
-    }
-  }
-  return true;
-}
+// 获取服务注册表单例
+const registry = getRegistry();
 
 /**
- * 注册服务实现
- * @param {string} serviceName - 服务名称
- * @param {object} implementation - 服务实现
- * @param {object} options - 注册选项
- * @returns {boolean} - 注册是否成功
+ * 注册服务
  */
 export function registerService(serviceName, implementation, options = {}) {
   const { override = false } = options;
@@ -60,44 +51,27 @@ export function registerService(serviceName, implementation, options = {}) {
     return false;
   }
 
-  // 验证服务实现
-  if (!validateImplementation(serviceName, implementation)) {
-    console.error(`[Registry] Service ${serviceName} implementation does not match contract`);
-    return false;
-  }
-
   if (registry.services.has(serviceName) && !override) {
     console.warn(`[Registry] Service ${serviceName} already registered`);
     return false;
   }
 
-  registry.services.set(serviceName, implementation);
-  console.log(`[Registry] Service ${serviceName} registered successfully`);
+  const contract = ServiceContracts[serviceName];
+  const registeredImplementation = {};
+  
+  for (const [methodName, type] of Object.entries(contract)) {
+    if (type === 'function' && typeof implementation[methodName] === 'function') {
+      registeredImplementation[methodName] = implementation[methodName];
+    }
+  }
+
+  registry.services.set(serviceName, registeredImplementation);
+  console.log(`[Registry] Service ${serviceName} registered successfully with methods:`, Object.keys(registeredImplementation));
   return true;
 }
 
 /**
- * 获取服务实例
- * @param {string} serviceName - 服务名称
- * @returns {object} 服务实现
- */
-export function getService(serviceName) {
-  console.log(`[Registry] Getting service: ${serviceName}`);
-  console.log(`[Registry] Available services:`, Array.from(registry.services.keys()));
-  
-  const service = registry.services.get(serviceName);
-  if (!service) {
-    console.error(`[Registry] Service ${serviceName} not found`);
-    throw new Error(`Service ${serviceName} not registered`);
-  }
-  return service;
-}
-
-/**
  * 批量注册服务
- * @param {Object} services - 服务映射对象
- * @param {object} options - 注册选项
- * @returns {boolean} - 是否全部注册成功
  */
 export function registerServices(services, options = {}) {
   console.log(`[Registry] Batch registering services:`, Object.keys(services));
@@ -111,7 +85,24 @@ export function registerServices(services, options = {}) {
     allSuccess = allSuccess && success;
   });
   
+  registry.initialized = true;
   return allSuccess;
+}
+
+/**
+ * 获取服务实例
+ */
+export function getService(serviceName) {
+  if (!registry.initialized) {
+    console.warn(`[Registry] Services not initialized yet. Make sure services are registered.`);
+  }
+  
+  const service = registry.services.get(serviceName);
+  if (!service) {
+    console.error(`[Registry] Service ${serviceName} not found`);
+    throw new Error(`Service ${serviceName} not registered`);
+  }
+  return service;
 }
 
 /**
@@ -133,4 +124,11 @@ export function unregisterService(serviceName) {
  */
 export function getRegisteredServices() {
   return Array.from(registry.services.keys());
+}
+
+/**
+ * 检查服务是否已初始化
+ */
+export function isServicesInitialized() {
+  return registry.initialized;
 }
