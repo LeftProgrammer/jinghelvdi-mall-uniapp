@@ -1,6 +1,6 @@
 import request from '@jinghelvdi/core/src/request/index';
 
-const AuthUtil = {
+const AuthApi = {
   // 使用手机 + 密码登录
   login: (data) => {
     return request({
@@ -129,4 +129,4 @@ const AuthUtil = {
   //
 };
 
-export default AuthUtil;
+export default AuthApi;

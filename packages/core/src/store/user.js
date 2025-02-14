@@ -1,20 +1,13 @@
 import { defineStore } from 'pinia';
+import { $api } from '../index';
 import $share from '../platform/share';
 import { clone, cloneDeep } from 'lodash-es';
 import cart from './cart';
 import app from './app';
 import { showAuthModal } from '../hooks/useModal';
-// import UserApi from '@/sheep/api/member/user';
-// import { api } from '@jinghelvdi/core/src/api/index';
-// import { getService } from '@jinghelvdi/core/src/api/registry';
-// import { ServiceNames } from '@jinghelvdi/core/src/api/contracts';
-import { userService } from '../api/index';
 import PayWalletApi from '@/sheep/api/pay/wallet';
 import OrderApi from '@/sheep/api/trade/order';
 import CouponApi from '@/sheep/api/promotion/coupon';
-
-
-// const UserApi = getService(ServiceNames.USER);
 
 // 默认用户信息
 const defaultUserInfo = {
@@ -56,7 +49,7 @@ const user = defineStore({
   actions: {
     // 获取用户信息
     async getInfo() {
-      const { code, data } = await userService.getUserInfo();
+      const { code, data } = await $api.member.user.getUserInfo();
       if (code !== 0) {
         return;
       }

@@ -1,4 +1,4 @@
-import AuthUtil from '@/sheep/api/member/auth';
+import AuthApi from '@/sheep/api/member/auth';
 import SocialApi from '@/sheep/api/member/social';
 import UserApi from '@/sheep/api/member/user';
 
@@ -22,7 +22,7 @@ const login = async () => {
     }
 
     // 2. 社交登录
-    const loginResult = await AuthUtil.socialLogin(socialType, codeResult.code, 'default');
+    const loginResult = await AuthApi.socialLogin(socialType, codeResult.code, 'default');
     if (loginResult.code === 0) {
       setOpenid(loginResult.data.openid);
       return resolve(true);
@@ -46,7 +46,7 @@ const mobileLogin = async (e) => {
     }
 
     // 2. 一键登录
-    const loginResult = await AuthUtil.weixinMiniAppLogin(e.code, codeResult.code, 'default');
+    const loginResult = await AuthApi.weixinMiniAppLogin(e.code, codeResult.code, 'default');
     if (loginResult.code === 0) {
       setOpenid(loginResult.data.openid);
       return resolve(true);

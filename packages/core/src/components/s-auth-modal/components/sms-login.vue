@@ -63,7 +63,7 @@
   import sheep from '../../../index';
   import { code, mobile } from '../../../validate/form';
   import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
-  import AuthUtil from '@/sheep/api/member/auth';
+  import AuthApi from '@/sheep/api/member/auth';
 
   const smsLoginRef = ref(null);
 
@@ -107,7 +107,7 @@
       return;
     }
     // 提交数据
-    const { code } = await AuthUtil.smsLogin(state.model);
+    const { code } = await AuthApi.smsLogin(state.model);
     if (code === 0) {
       closeAuthModal();
     }

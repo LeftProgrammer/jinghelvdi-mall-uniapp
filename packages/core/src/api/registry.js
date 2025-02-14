@@ -1,36 +1,19 @@
 import {
   ServiceNames,
-  AuthServiceContract,
-  UserServiceContract,
-  AddressServiceContract,
-  PointServiceContract,
-  SignInServiceContract,
-  SocialServiceContract,
+  ServiceContracts,
 } from './contracts';
-
-// 服务契约映射
-const ServiceContracts = {
-  [ServiceNames.AUTH]: AuthServiceContract,
-  [ServiceNames.USER]: UserServiceContract,
-  [ServiceNames.ADDRESS]: AddressServiceContract,
-  [ServiceNames.POINT]: PointServiceContract,
-  [ServiceNames.SIGNIN]: SignInServiceContract,
-  [ServiceNames.SOCIAL]: SocialServiceContract,
-};
 
 // 使用全局对象确保单例
 const getRegistry = () => {
-  // 在全局对象上存储单例
   const globalObj = typeof window !== 'undefined' ? window : global;
   const KEY = Symbol.for('SERVICE_REGISTRY');
   
   if (!globalObj[KEY]) {
-    const registry = {
+    globalObj[KEY] = {
       services: new Map(),
-      initialized: false
+      initialized: false,
+      modules: new Set()  // 记录已初始化的模块
     };
-    
-    globalObj[KEY] = registry;
   }
   
   return globalObj[KEY];
@@ -40,7 +23,23 @@ const getRegistry = () => {
 const registry = getRegistry();
 
 /**
- * 注册服务
+ * 根据契约过滤服务实现
+ */
+function filterImplementation(serviceName, implementation) {
+  const contract = ServiceContracts[serviceName];
+  if (!contract) return implementation;
+
+  const filteredImpl = {};
+  for (const [methodName, type] of Object.entries(contract)) {
+    if (type === 'function' && typeof implementation[methodName] === 'function') {
+      filteredImpl[methodName] = implementation[methodName];
+    }
+  }
+  return filteredImpl;
+}
+
+/**
+ * 注册单个服务
  */
 export function registerService(serviceName, implementation, options = {}) {
   const { override = false } = options;
@@ -56,33 +55,67 @@ export function registerService(serviceName, implementation, options = {}) {
     return false;
   }
 
-  const contract = ServiceContracts[serviceName];
-  const registeredImplementation = {};
+  // 根据契约过滤实现
+  const filteredImpl = filterImplementation(serviceName, implementation);
   
-  for (const [methodName, type] of Object.entries(contract)) {
-    if (type === 'function' && typeof implementation[methodName] === 'function') {
-      registeredImplementation[methodName] = implementation[methodName];
-    }
+  registry.services.set(serviceName, filteredImpl);
+  console.log(`[Registry] Service ${serviceName} registered successfully with methods:`, 
+    Object.keys(filteredImpl));
+  return true;
+}
+
+/**
+ * 注册模块服务
+ */
+export function registerModuleServices(moduleName, implementations) {
+  if (registry.modules.has(moduleName)) {
+    console.warn(`[Registry] Module ${moduleName} already registered`);
+    return false;
   }
 
-  registry.services.set(serviceName, registeredImplementation);
-  console.log(`[Registry] Service ${serviceName} registered successfully with methods:`, Object.keys(registeredImplementation));
-  return true;
+  console.log(`[Registry] Registering module: ${moduleName}`);
+  // 获取模块的服务名称
+  const moduleServices = ServiceNames[moduleName];
+  if (!moduleServices) {
+    console.error(`[Registry] Unknown module: ${moduleName}`);
+    return false;
+  }
+
+  let success = true;
+  // 注册模块下的所有服务
+  Object.entries(implementations).forEach(([serviceName, implementation]) => {
+    // 构造完整的服务名称
+    const fullServiceName = `${moduleName}.${serviceName}`;
+    console.log(`[Registry] Registering service: ${fullServiceName}`);
+
+    if (!registerService(fullServiceName, implementation)) {
+      console.error(`[Registry] Failed to register service: ${fullServiceName}`);
+      success = false;
+    }
+  });
+
+  if (success) {
+    registry.modules.add(moduleName);
+    console.log(`[Registry] Module ${moduleName} registered successfully`);
+  } else {
+    console.error(`[Registry] Module ${moduleName} registration failed`);
+  }
+
+  return success;
 }
 
 /**
  * 批量注册服务
  */
-export function registerServices(services, options = {}) {
+export function registerServices(services) {
   console.log(`[Registry] Batch registering services:`, Object.keys(services));
   let allSuccess = true;
   
-  Object.entries(services).forEach(([name, implementation]) => {
-    const success = registerService(name, implementation, options);
-    if (!success) {
-      console.error(`[Registry] Failed to register service: ${name}`);
+  // 按模块注册服务
+  Object.entries(services).forEach(([moduleName, moduleServices]) => {
+    if (!registerModuleServices(moduleName, moduleServices)) {
+      allSuccess = false;
     }
-    allSuccess = allSuccess && success;
   });
   
   registry.initialized = true;
@@ -113,17 +146,33 @@ export function hasService(serviceName) {
 }
 
 /**
- * 注销服务
+ * 检查模块是否已注册
  */
-export function unregisterService(serviceName) {
-  return registry.services.delete(serviceName);
+export function hasModule(moduleName) {
+  return registry.modules.has(moduleName);
 }
 
 /**
- * 获取所有已注册的服务名称
+ * 获取已注册的模块列表
  */
-export function getRegisteredServices() {
-  return Array.from(registry.services.keys());
+export function getRegisteredModules() {
+  return Array.from(registry.modules);
+}
+
+/**
+ * 获取模块下的所有服务
+ */
+export function getModuleServices(moduleName) {
+  const moduleServices = {};
+  const prefix = `${moduleName}.`;
+  
+  for (const [serviceName, service] of registry.services.entries()) {
+    if (serviceName.startsWith(prefix)) {
+      moduleServices[serviceName.slice(prefix.length)] = service;
+    }
+  }
+  
+  return moduleServices;
 }
 
 /**

@@ -49,25 +49,12 @@
 
 <script setup>
   import { ref, reactive, unref } from 'vue';
-  import sheep from '../../../index';
+  import { $helper, $api } from '../../../index';
   import { mobile, password } from '../../../validate/form';
   import { showAuthModal, closeAuthModal } from '../../../hooks/useModal';
-  // import AuthUtil from '@/sheep/api/member/auth';
-  // import { authService } from '../../../api/index';
-  import { api } from '../../../api/index';
-  // import { getService } from '@jinghelvdi/core/src/api/registry';
-  // import { ServiceNames } from '@jinghelvdi/core/src/api/contracts';
-
-  // const aaa = getService(ServiceNames.AUTH);
-  // const authService = getService(ServiceNames.AUTH);
-  
-  // const userApi = getService(ServiceNames.USER);
-  // await api.user.getUserInfo()
 
   const accountLoginRef = ref(null);
-
   const emits = defineEmits(['onConfirm']);
-
   const props = defineProps({
     agreeStatus: {
       type: Boolean,
@@ -100,12 +87,12 @@
     // 同意协议
     if (!props.agreeStatus) {
       emits('onConfirm', true)
-      sheep.$helper.toast('请勾选同意');
+      $helper.toast('请勾选同意');
       return;
     }
 
     // 提交数据
-    const { code, data } = await api.auth.login(state.model);
+    const { code, data } = await $api?.member?.auth?.login(state.model);
     
     if (code === 0) {
       closeAuthModal();

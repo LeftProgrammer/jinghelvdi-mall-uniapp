@@ -1,12 +1,11 @@
-import { $helper,  $url, $router, $platform, $zIndex, $store } from '@jinghelvdi/core';
+import { $helper,  $url, $router, $platform, $zIndex, $store, $api } from '@jinghelvdi/core';
 import { registerServices } from '@jinghelvdi/core/src/api/registry';
-import { ServiceNames } from '@jinghelvdi/core/src/api/contracts';
-import AuthUtil from './api/member/auth';
-import UserUtil from './api/member/user';
-import AddressUtil from './api/member/address';
-import PointUtil from './api/member/point';
-import SignInUtil from './api/member/signin';
-import SocialUtil from './api/member/social';
+import AuthApi from './api/member/auth';
+import UserApi from './api/member/user';
+import AddressApi from './api/member/address';
+import PointApi from './api/member/point';
+import SignInApi from './api/member/signin';
+import SocialApi from './api/member/social';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -24,23 +23,29 @@ const sheep = {
   $platform,
   $zIndex,
   $store,
+  $api,
 };
 
 export function initProjectServices() {
+  // 按模块组织服务
   const services = {
-    [ServiceNames.AUTH]: AuthUtil,
-    [ServiceNames.USER]: UserUtil,
-    [ServiceNames.ADDRESS]: AddressUtil,
-    [ServiceNames.POINT]: PointUtil,
-    [ServiceNames.SIGNIN]: SignInUtil,
-    [ServiceNames.SOCIAL]: SocialUtil,
+    member: {
+      auth: AuthApi,
+      user: UserApi,
+      address: AddressApi,
+      point: PointApi,
+      signin: SignInApi,
+      social: SocialApi,
+    }
   };
   // 批量注册服务
   const success = registerServices(services, { override: true });
   if (!success) {
-    console.warn('Some services failed to register. Check the console for details.');
+    console.error('[Sheep] Service registration failed');
+    throw new Error('Service registration failed. Check the console for details.');
+  } else {
+    console.log('[Sheep] Service registration completed successfully');
   }
-  // registerService('AuthService', AuthUtil);
 }
 
 // 加载Shopro底层依赖

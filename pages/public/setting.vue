@@ -98,7 +98,7 @@
 <script setup>
   import sheep from '@/sheep';
   import { computed, reactive } from 'vue';
-  import AuthUtil from '@/sheep/api/member/auth';
+  import AuthApi from '@/sheep/api/member/auth';
 
   const appInfo = computed(() => sheep.$store('app').info);
   const isLogin = computed(() => sheep.$store('user').isLogin);
@@ -123,7 +123,7 @@
         if (!res.confirm) {
           return;
         }
-        const { code } = await AuthUtil.logout();
+        const { code } = await AuthApi.logout();
         if (code !== 0) {
           return;
         }
@@ -142,7 +142,7 @@
         if (!res.confirm) {
           return;
         }
-        const { code } = await AuthUtil.logout();
+        const { code } = await AuthApi.logout();
         if (code !== 0) {
           return;
         }
