@@ -179,7 +179,6 @@
   // 分享信息
   const shareInfo = computed(() => {
     if (props.onShareAppMessage === true) {
-      // console.log('sheep.$platform:', sheep.$platform);
       return sheep.$platform.share.getShareInfo();
     } else {
       if (!isEmpty(props.onShareAppMessage)) {

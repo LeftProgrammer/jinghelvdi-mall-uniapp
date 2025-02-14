@@ -34,6 +34,6 @@ export function formatImageUrlProtocol(url) {
 
 // 获得微信小程序码 （Base64 image）
 export async function getWxaQrcode(path, query) {
-  const res = await $api.member.social.getWxaQrcode(path, query);
+  const res = await $api?.member?.socialApi?.getWxaQrcode(path, query);
   return 'data:image/png;base64,' + res.data;
 }

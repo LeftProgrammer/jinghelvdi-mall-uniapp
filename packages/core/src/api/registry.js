@@ -58,8 +58,8 @@ export function registerService(serviceName, implementation, options = {}) {
   const filteredImpl = filterImplementation(serviceName, implementation);
   
   registry.services.set(serviceName, filteredImpl);
-  console.log(`[Registry] Service ${serviceName} registered successfully with methods:`, 
-    Object.keys(filteredImpl));
+  // console.log(`[Registry] Service ${serviceName} registered successfully with methods:`, 
+  //   Object.keys(filteredImpl));
   return true;
 }
 
@@ -108,7 +108,7 @@ export function registerModuleServices(moduleName, implementations, options = {}
  * 批量注册服务
  */
 export function registerServices(services) {
-  console.log(`[Registry] Batch registering services:`, Object.keys(services));
+  // console.log(`[Registry] Batch registering services:`, Object.keys(services));
   let allSuccess = true;
   
   // 按模块注册服务
