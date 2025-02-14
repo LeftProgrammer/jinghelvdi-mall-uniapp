@@ -4,12 +4,12 @@
 export const ServiceNames = {
   // member 模块
   member: {
-    AUTH: 'member.auth',
-    USER: 'member.user',
-    ADDRESS: 'member.address',
-    POINT: 'member.point',
-    SIGNIN: 'member.signin',
-    SOCIAL: 'member.social'
+    AuthApi: 'member.AuthApi',
+    UserApi: 'member.UserApi',
+    AddressApi: 'member.AddressApi',
+    PointApi: 'member.PointApi',
+    SignInApi: 'member.SignInApi',
+    SocialApi: 'member.SocialApi'
   },
   
   // infra 模块
@@ -66,7 +66,7 @@ export const ServiceNames = {
 // member 模块契约
 export const MemberContracts = {
   // 认证服务契约
-  [ServiceNames.member.AUTH]: {
+  [ServiceNames.member.AuthApi]: {
     login: 'function',
     refreshToken: 'function',
     logout: 'function',
@@ -78,7 +78,7 @@ export const MemberContracts = {
   },
 
   // 用户服务契约
-  [ServiceNames.member.USER]: {
+  [ServiceNames.member.UserApi]: {
     getUserInfo: 'function',
     updateUserInfo: 'function',
     updateAvatar: 'function',
@@ -87,7 +87,7 @@ export const MemberContracts = {
   },
 
   // 地址服务契约
-  [ServiceNames.member.ADDRESS]: {
+  [ServiceNames.member.AddressApi]: {
     getList: 'function',
     getDetail: 'function',
     add: 'function',
@@ -97,20 +97,20 @@ export const MemberContracts = {
   },
 
   // 积分服务契约
-  [ServiceNames.member.POINT]: {
+  [ServiceNames.member.PointApi]: {
     getRecord: 'function',
     getDetail: 'function',
   },
 
   // 签到服务契约
-  [ServiceNames.member.SIGNIN]: {
+  [ServiceNames.member.SignInApi]: {
     sign: 'function',
     getConfig: 'function',
     getList: 'function',
   },
 
   // 社交服务契约
-  [ServiceNames.member.SOCIAL]: {
+  [ServiceNames.member.SocialApi]: {
     bindLogin: 'function',
     unbind: 'function',
     getBindList: 'function',

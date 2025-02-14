@@ -6,6 +6,10 @@ const createServiceProxy = (serviceName) => {
   return new Proxy({}, {
     get(target, property) {
       const service = getService(serviceName);
+      if (!service) {
+        console.error(`[API] Service not found: ${serviceName}`);
+        return undefined;
+      }
       return service[property];
     }
   });
@@ -13,10 +17,24 @@ const createServiceProxy = (serviceName) => {
 
 // 创建模块代理
 const createModuleProxy = (moduleName) => {
+  const moduleServices = ServiceNames[moduleName];
+  if (!moduleServices) {
+    console.error(`[API] Module not found: ${moduleName}`);
+    return undefined;
+  }
+
   return new Proxy({}, {
-    get(target, property) {
-      const serviceName = `${moduleName}.${property}`;
-      return createServiceProxy(serviceName);
+    get(target, serviceName) {
+      // 服务名称转换：authApi -> AuthApi
+      const apiName = serviceName.charAt(0).toUpperCase() + serviceName.slice(1);
+      const fullServiceName = moduleServices[apiName];
+      
+      if (!fullServiceName) {
+        console.error(`[API] Service not found: ${moduleName}.${apiName}`);
+        return undefined;
+      }
+      
+      return createServiceProxy(fullServiceName);
     }
   });
 };
@@ -24,20 +42,20 @@ const createModuleProxy = (moduleName) => {
 // 导出统一的 API 对象
 const api = new Proxy({}, {
   get(target, moduleName) {
-    // 常用服务直接放在顶层
+    // 常用服务直接放在顶层，使用 camelCase
     switch(moduleName) {
-      case 'auth':
-        return createServiceProxy(ServiceNames.member.AUTH);
-      case 'user':
-        return createServiceProxy(ServiceNames.member.USER);
-      case 'address':
-        return createServiceProxy(ServiceNames.member.ADDRESS);
-      case 'goods':
-        return createServiceProxy(ServiceNames.product.SPU);
-      case 'order':
-        return createServiceProxy(ServiceNames.trade.ORDER);
-      case 'wallet':
-        return createServiceProxy(ServiceNames.pay.WALLET);
+      case 'authApi':
+        return createServiceProxy(ServiceNames.member.AuthApi);
+      case 'userApi':
+        return createServiceProxy(ServiceNames.member.UserApi);
+      case 'addressApi':
+        return createServiceProxy(ServiceNames.member.AddressApi);
+      case 'spuApi':
+        return createServiceProxy(ServiceNames.product.SpuApi);
+      case 'orderApi':
+        return createServiceProxy(ServiceNames.trade.OrderApi);
+      case 'walletApi':
+        return createServiceProxy(ServiceNames.pay.WalletApi);
       default:
         // 其他服务按模块访问
         return createModuleProxy(moduleName);

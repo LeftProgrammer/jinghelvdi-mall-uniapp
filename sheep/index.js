@@ -26,16 +26,16 @@ const sheep = {
   $api,
 };
 
-export function initProjectServices() {
+export function initServices() {
   // 按模块组织服务
   const services = {
     member: {
-      auth: AuthApi,
-      user: UserApi,
-      address: AddressApi,
-      point: PointApi,
-      signin: SignInApi,
-      social: SocialApi,
+      AuthApi,
+      UserApi,
+      AddressApi,
+      PointApi,
+      SignInApi,
+      SocialApi,
     }
   };
   // 批量注册服务
@@ -43,14 +43,13 @@ export function initProjectServices() {
   if (!success) {
     console.error('[Sheep] Service registration failed');
     throw new Error('Service registration failed. Check the console for details.');
-  } else {
-    console.log('[Sheep] Service registration completed successfully');
   }
 }
 
 // 加载Shopro底层依赖
 export async function ShoproInit() {
-  initProjectServices();
+  // 注册Api服务
+  initServices();
   // 应用初始化
   await $store('app').init();
 

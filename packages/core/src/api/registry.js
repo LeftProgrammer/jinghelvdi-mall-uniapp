@@ -43,7 +43,6 @@ function filterImplementation(serviceName, implementation) {
  */
 export function registerService(serviceName, implementation, options = {}) {
   const { override = false } = options;
-  console.log(`[Registry] Registering service: ${serviceName}`);
   
   if (!implementation) {
     console.warn(`[Registry] Invalid implementation for service: ${serviceName}`);
@@ -67,13 +66,12 @@ export function registerService(serviceName, implementation, options = {}) {
 /**
  * 注册模块服务
  */
-export function registerModuleServices(moduleName, implementations) {
-  if (registry.modules.has(moduleName)) {
+export function registerModuleServices(moduleName, implementations, options = {}) {
+  if (registry.modules.has(moduleName) && !options.override) {
     console.warn(`[Registry] Module ${moduleName} already registered`);
     return false;
   }
 
-  console.log(`[Registry] Registering module: ${moduleName}`);
   // 获取模块的服务名称
   const moduleServices = ServiceNames[moduleName];
   if (!moduleServices) {
@@ -83,20 +81,22 @@ export function registerModuleServices(moduleName, implementations) {
 
   let success = true;
   // 注册模块下的所有服务
-  Object.entries(implementations).forEach(([serviceName, implementation]) => {
-    // 构造完整的服务名称
-    const fullServiceName = `${moduleName}.${serviceName}`;
-    console.log(`[Registry] Registering service: ${fullServiceName}`);
+  Object.entries(implementations).forEach(([apiName, implementation]) => {
+    // 使用完整的服务名称（例如：'member.AuthApi'）
+    const fullServiceName = moduleServices[apiName];
+    if (!fullServiceName) {
+      console.warn(`[Registry] Unknown service ${apiName} in module ${moduleName}`);
+      success = false;
+      return;
+    }
 
     if (!registerService(fullServiceName, implementation)) {
-      console.error(`[Registry] Failed to register service: ${fullServiceName}`);
       success = false;
     }
   });
 
   if (success) {
     registry.modules.add(moduleName);
-    console.log(`[Registry] Module ${moduleName} registered successfully`);
   } else {
     console.error(`[Registry] Module ${moduleName} registration failed`);
   }

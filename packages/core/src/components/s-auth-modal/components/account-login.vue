@@ -92,7 +92,7 @@
     }
 
     // 提交数据
-    const { code, data } = await $api?.member?.auth?.login(state.model);
+    const { code, data } = await $api?.member?.authApi?.login(state.model);
     
     if (code === 0) {
       closeAuthModal();

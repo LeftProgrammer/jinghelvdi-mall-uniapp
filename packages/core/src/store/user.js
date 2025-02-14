@@ -49,7 +49,7 @@ const user = defineStore({
   actions: {
     // 获取用户信息
     async getInfo() {
-      const { code, data } = await $api.member.user.getUserInfo();
+      const { code, data } = await $api?.member?.userApi?.getUserInfo();
       if (code !== 0) {
         return;
       }
