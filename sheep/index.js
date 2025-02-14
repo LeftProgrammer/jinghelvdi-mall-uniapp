@@ -2,10 +2,20 @@ import { $helper,  $url, $router, $platform, $zIndex, $store, $api } from '@jing
 import { registerServices } from '@jinghelvdi/core/src/api/registry';
 import AuthApi from './api/member/auth';
 import UserApi from './api/member/user';
-import AddressApi from './api/member/address';
-import PointApi from './api/member/point';
-import SignInApi from './api/member/signin';
 import SocialApi from './api/member/social';
+import FileApi from './api/infra/file';
+import CouponApi from './api/promotion/coupon';
+import CombinationApi from './api/promotion/combination';
+import PointApi from './api/promotion/point';
+import ArticleApi from './api/promotion/article';
+import SeckillApi from './api/promotion/seckill';
+import DiyApi from './api/promotion/diy';
+import SpuApi from './api/product/spu';
+import OrderApi from './api/trade/order';
+import BrokerageApi from './api/trade/brokerage';
+import CartApi from './api/trade/cart';
+import PayOrderApi from './api/pay/order';
+import PayWalletApi from './api/pay/wallet';
 
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -32,11 +42,32 @@ export function initServices() {
     member: {
       AuthApi,
       UserApi,
-      AddressApi,
-      PointApi,
-      SignInApi,
       SocialApi,
-    }
+    },
+    infra: {
+      FileApi
+    },
+    promotion: {
+      CouponApi,
+      CombinationApi,
+      PointApi,
+      ArticleApi,
+      SeckillApi,
+      DiyApi
+    },
+    product: {
+      SpuApi
+    },
+    trade: {
+      OrderApi,
+      BrokerageApi,
+      CartApi
+    },
+    pay: {
+      PayOrderApi,
+      PayWalletApi
+    },
+    third: {}
   };
   // 批量注册服务
   const success = registerServices(services, { override: true });

@@ -26,7 +26,6 @@
 
 <script setup>
 	import sheep from '../../index';
-	import CouponApi from '@/sheep/api/promotion/coupon';
 	import {
 		ref,
 		onMounted,
@@ -126,7 +125,7 @@
 		const {
 			error,
 			msg
-		} = await CouponApi.takeCoupon(id);
+		} = await sheep.$api?.promotion?.couponApi?.takeCoupon(id);
 		if (error === 0) {
 			uni.showToast({
 				title: msg,
@@ -139,7 +138,7 @@
 	const getCouponTemplateList = async () => {
 		const {
 			data
-		} = await CouponApi.getCouponTemplateListByIds(props.data.couponIds.join(','));
+		} = await sheep.$api?.promotion?.couponApi?.getCouponTemplateListByIds(props.data.couponIds.join(','));
 		couponList.value = data;
 	}
 	onMounted(() => {

@@ -48,14 +48,8 @@ const api = new Proxy({}, {
         return createServiceProxy(ServiceNames.member.AuthApi);
       case 'userApi':
         return createServiceProxy(ServiceNames.member.UserApi);
-      case 'addressApi':
-        return createServiceProxy(ServiceNames.member.AddressApi);
-      case 'spuApi':
-        return createServiceProxy(ServiceNames.product.SpuApi);
-      case 'orderApi':
-        return createServiceProxy(ServiceNames.trade.OrderApi);
-      case 'walletApi':
-        return createServiceProxy(ServiceNames.pay.WalletApi);
+      case 'socialApi':
+        return createServiceProxy(ServiceNames.pay.SocialApi);
       default:
         // 其他服务按模块访问
         return createModuleProxy(moduleName);

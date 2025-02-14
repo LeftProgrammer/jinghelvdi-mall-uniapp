@@ -60,10 +60,9 @@
 
 <script setup>
   import { ref, reactive, unref } from 'vue';
-  import sheep from '../../../index';
+  import { $helper, $api } from '../../../index';
   import { code, mobile } from '../../../validate/form';
   import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
-  import AuthApi from '@/sheep/api/member/auth';
 
   const smsLoginRef = ref(null);
 
@@ -103,11 +102,11 @@
     }
     if (!props.agreeStatus) {
       emits('onConfirm', true)
-      sheep.$helper.toast('请勾选同意');
+      $helper.toast('请勾选同意');
       return;
     }
     // 提交数据
-    const { code } = await AuthApi.smsLogin(state.model);
+    const { code } = await $api?.member?.authApi?.smsLogin(state.model);
     if (code === 0) {
       closeAuthModal();
     }

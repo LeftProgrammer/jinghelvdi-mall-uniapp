@@ -1,5 +1,5 @@
 'use strict';
-import FileApi from '@/sheep/api/infra/file';
+import { $api } from '../../../index';
 
 const ERR_MSG_OK = 'chooseAndUploadFile:ok';
 const ERR_MSG_FAIL = 'chooseAndUploadFile:fail';
@@ -208,7 +208,7 @@ async function uploadFiles(choosePromise, { onChooseFile, onUploadProgress }) {
     const uploadPromises = files.map(async (file) => {
       try {
         // 1.1 获取文件预签名地址
-        const { data: presignedInfo } = await FileApi.getFilePresignedUrl(file.name);
+        const { data: presignedInfo } = await $api?.infra?.file?.getFilePresignedUrl(file.name);
         // 1.2 获取二进制文件对象
         const fileBuffer = await convertToArrayBuffer(file);
 
@@ -247,7 +247,7 @@ async function uploadFiles(choosePromise, { onChooseFile, onUploadProgress }) {
   } else {
     // 后端上传
     for (let file of files) {
-      const { data } = await FileApi.uploadFile(file.path);
+      const { data } = await $api?.infra?.file?.uploadFile(file.path);
       file.url = data;
     }
 
@@ -282,7 +282,7 @@ function createFile(vo, file) {
     type: file.fileType,
     size: file.size,
   };
-  FileApi.createFile(fileVo);
+  $api?.infra?.file?.createFile(fileVo);
   return fileVo;
 }
 

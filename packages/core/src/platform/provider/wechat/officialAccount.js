@@ -1,7 +1,6 @@
 import $wxsdk from '../../../libs/sdk-h5-weixin';
+import { $api } from '../../../index';
 import { getRootUrl } from '../../../helper';
-import AuthApi from '@/sheep/api/member/auth';
-import SocialApi from '@/sheep/api/member/social';
 
 const socialType = 31; // 社交类型 - 微信公众号
 
@@ -22,7 +21,7 @@ async function login(code = '', state = '') {
   // 情况二：有 code 时，使用 code 去自动登录
   } else {
     // 解密 code 发起登陆
-    const loginResult = await AuthApi.socialLogin(socialType, code, state);
+    const loginResult = await $api?.member?.authApi?.socialLogin(socialType, code, state);
     if (loginResult.code === 0) {
       setOpenid(loginResult.data.openid);
       return loginResult;
@@ -42,7 +41,7 @@ async function bind(code = '', state = '') {
     }
   } else {
     // 情况二：有 code 时，使用 code 去自动绑定
-    const loginResult = await SocialApi.socialBind(socialType, code, state);
+    const loginResult = await $api?.member?.socialApi?.socialBind(socialType, code, state);
     if (loginResult.code === 0) {
       setOpenid(loginResult.data);
       return loginResult;
@@ -53,7 +52,7 @@ async function bind(code = '', state = '') {
 
 // 微信公众号解除绑定
 const unbind = async (openid) => {
-  const { code } = await SocialApi.socialUnbind(socialType, openid);
+  const { code } = await $api?.member?.socialApi?.socialUnbind(socialType, openid);
   return code === 0;
 };
 
@@ -61,7 +60,7 @@ const unbind = async (openid) => {
 async function getLoginUrl(event = 'login') {
   const page = getRootUrl() + 'pages/index/login'
     + '?event=' + event; // event 目的，区分是 login 还是 bind
-  const { code, data } = await AuthApi.socialAuthRedirect(socialType, page);
+  const { code, data } = await $api?.member?.authApi?.socialAuthRedirect(socialType, page);
   if (code !== 0) {
     return undefined;
   }
@@ -88,7 +87,7 @@ async function getOpenid(force = false) {
 
 // 获得社交信息
 async function getInfo() {
-  const { code, data } = await SocialApi.getSocialUser(socialType);
+  const { code, data } = await $api?.member?.socialApi?.getSocialUser(socialType);
   if (code !== 0) {
     return undefined;
   }

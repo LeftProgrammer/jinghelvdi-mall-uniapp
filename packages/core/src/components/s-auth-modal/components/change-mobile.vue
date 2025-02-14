@@ -72,7 +72,6 @@
   import sheep from '../../../index';
   import { code, mobile } from '../../../validate/form';
   import { closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
-  import UserApi from '@/sheep/api/member/user';
 
   const changeMobileRef = ref(null);
   const userInfo = computed(() => sheep.$store('user').userInfo);
@@ -101,7 +100,7 @@
       return;
     }
     // 提交更新请求
-    const { code } = await UserApi.updateUserMobile(state.model);
+    const { code } = await sheep.$api?.member?.userApi?.updateUserMobile(state.model);
     if (code !== 0) {
       return;
     }

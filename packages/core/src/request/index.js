@@ -4,11 +4,9 @@
  */
 
 import Request from 'luch-request';
+import { $store, $platform, $api } from '../index';
 import { apiPath, baseUrl, tenantId } from '../config/index';
-import $store from '../store';
-import $platform from '../platform';
 import { showAuthModal } from '../hooks/useModal';
-import AuthApi from '@/sheep/api/member/auth';
 import { getTerminal } from '../util/const';
 
 const options = {
@@ -236,7 +234,7 @@ const refreshToken = async (config) => {
     }
     // 2. 进行刷新访问令牌
     try {
-      const refreshTokenResult = await AuthApi.refreshToken(refreshToken);
+      const refreshTokenResult = await $api?.member?.authApi?.refreshToken(refreshToken);
       if (refreshTokenResult.code !== 0) {
         // 如果刷新不成功，直接抛出 e 触发 2.2 的逻辑
         // noinspection ExceptionCaughtLocallyJS

@@ -5,8 +5,7 @@
  */
 
 import jweixin from 'weixin-js-sdk';
-import $helper from '../helper';
-import AuthApi from '@/sheep/api/member/auth';
+import { $helper, $api } from '../index'
 
 let configSuccess = false;
 
@@ -31,7 +30,7 @@ export default {
 
     // 调用后端接口，获得 JSSDK 初始化所需的签名
     const url = location.href.split('#')[0];
-    const { code, data } = await AuthApi.createWeixinMpJsapiSignature(url);
+    const { code, data } = await $api?.member?.authApi?.createWeixinMpJsapiSignature(url);
     if (code === 0) {
       jweixin.config({
         debug: false,

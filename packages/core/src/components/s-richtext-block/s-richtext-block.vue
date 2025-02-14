@@ -16,7 +16,7 @@
 </template>
 <script setup>
   import { reactive, onMounted } from 'vue';
-  import ArticleApi from '@/sheep/api/promotion/article';
+  import { $api } from '../../index';
 
   const props = defineProps({
     data: {
@@ -34,7 +34,7 @@
   });
 
   onMounted(async () => {
-    const { data } = await ArticleApi.getArticle(props.data.id);
+    const { data } = await $api?.promotion?.articleApi?.getArticle(props.data.id);
     state.content = data.content;
   });
 </script>

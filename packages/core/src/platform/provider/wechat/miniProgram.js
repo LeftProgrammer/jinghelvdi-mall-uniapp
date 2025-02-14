@@ -1,6 +1,4 @@
-import AuthApi from '@/sheep/api/member/auth';
-import SocialApi from '@/sheep/api/member/social';
-import UserApi from '@/sheep/api/member/user';
+import { $api } from '../index';
 
 const socialType = 34; // 社交类型 - 微信小程序
 
@@ -22,7 +20,7 @@ const login = async () => {
     }
 
     // 2. 社交登录
-    const loginResult = await AuthApi.socialLogin(socialType, codeResult.code, 'default');
+    const loginResult = await $api?.member?.authApi?.socialLogin(socialType, codeResult.code, 'default');
     if (loginResult.code === 0) {
       setOpenid(loginResult.data.openid);
       return resolve(true);
@@ -46,7 +44,7 @@ const mobileLogin = async (e) => {
     }
 
     // 2. 一键登录
-    const loginResult = await AuthApi.weixinMiniAppLogin(e.code, codeResult.code, 'default');
+    const loginResult = await $api?.member?.authApi?.weixinMiniAppLogin(e.code, codeResult.code, 'default');
     if (loginResult.code === 0) {
       setOpenid(loginResult.data.openid);
       return resolve(true);
@@ -66,7 +64,7 @@ const bind = () => {
     }
 
     // 2. 绑定账号
-    const bindResult = await SocialApi.socialBind(socialType, codeResult.code, 'default');
+    const bindResult = await $api?.member?.socialApi?.socialBind(socialType, codeResult.code, 'default');
     if (bindResult.code === 0) {
       setOpenid(bindResult.data);
       return resolve(true);
@@ -78,14 +76,14 @@ const bind = () => {
 
 // 微信小程序解除绑定
 const unbind = async (openid) => {
-  const { code } = await SocialApi.socialUnbind(socialType, openid);
+  const { code } = await $api?.member?.socialApi?.socialUnbind(socialType, openid);
   return code === 0;
 };
 
 // 绑定用户手机号
 const bindUserPhoneNumber = (e) => {
   return new Promise(async (resolve, reject) => {
-    const { code } = await UserApi.updateUserMobileByWeixin(e.code);
+    const { code } = await $api?.member?.userApi?.updateUserMobileByWeixin(e.code);
     if (code === 0) {
       resolve(true);
     }
@@ -113,7 +111,7 @@ async function getOpenid(force = false) {
 
 // 获得社交信息
 async function getInfo() {
-  const { code, data } = await SocialApi.getSocialUser(socialType);
+  const { code, data } = await $api?.member?.socialApi?.getSocialUser(socialType);
   if (code !== 0) {
     return undefined;
   }
@@ -162,7 +160,7 @@ const checkUpdate = async (silence = true) => {
 
 // 获取订阅消息模板
 async function getSubscribeTemplate() {
-  const { code, data } = await SocialApi.getSubscribeTemplateList();
+  const { code, data } = await $api?.member?.socialApi?.getSubscribeTemplateList();
   if (code === 0) {
     subscribeEventList = data;
   }

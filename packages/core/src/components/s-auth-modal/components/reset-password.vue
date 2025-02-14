@@ -73,7 +73,6 @@
   import sheep from '../../../index';
   import { code, mobile, password } from '../../../validate/form';
   import { showAuthModal, closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
-  import UserApi from '@/sheep/api/member/user';
 
   const resetPasswordRef = ref(null);
   const isLogin = computed(() => sheep.$store('user').isLogin);
@@ -105,7 +104,7 @@
       return;
     }
     // 发起请求
-    const { code } = await UserApi.resetUserPassword(state.model);
+    const { code } = await sheep.$api?.member?.userApi?.resetUserPassword(state.model);
     if (code !== 0) {
       return;
     }

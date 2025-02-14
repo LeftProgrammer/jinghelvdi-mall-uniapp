@@ -233,7 +233,6 @@
   onPageScroll(() => {});
   import countDown from '@jinghelvdi/core/src/components/countDown/index.vue';
   import OrderApi from '@/sheep/api/trade/order';
-  import activity from '@/sheep/api/promotion/activity';
   import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
 
   const bgColor = {

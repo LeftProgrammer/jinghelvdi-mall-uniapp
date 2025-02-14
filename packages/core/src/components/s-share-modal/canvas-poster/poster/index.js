@@ -1,7 +1,7 @@
+import { $api } from '../../../../index';
 import user from './user';
 import goods from './goods';
 import groupon from './groupon';
-import SocialApi from '@/sheep/api/member/social';
 
 export function getPosterData(options) {
   switch (options.shareInfo.poster.type) {
@@ -34,6 +34,6 @@ export function formatImageUrlProtocol(url) {
 
 // 获得微信小程序码 （Base64 image）
 export async function getWxaQrcode(path, query) {
-  const res = await SocialApi.getWxaQrcode(path, query);
+  const res = await $api.member.social.getWxaQrcode(path, query);
   return 'data:image/png;base64,' + res.data;
 }

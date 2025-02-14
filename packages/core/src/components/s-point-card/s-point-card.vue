@@ -143,7 +143,6 @@
    */
   import { computed, nextTick, onMounted, reactive, watch } from 'vue';
   import sheep from '../../index';
-  import SpuApi from '@/sheep/api/product/spu';
   import { PromotionActivityTypeEnum } from '../../util/const';
   import { isEmpty } from '../../helper/utils';
 
@@ -280,7 +279,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getSpuDetail(ids) {
-    const { data: spu } = await SpuApi.getSpuDetail(ids);
+    const { data: spu } = await sheep.$api?.product?.spuApi.getSpuDetail(ids);
     return spu;
   }
 

@@ -1,6 +1,5 @@
-import DiyApi from '@/sheep/api/promotion/diy';
 import { defineStore } from 'pinia';
-import { $platform, $router } from '../index';
+import { $platform, $router, $api } from '../index';
 import user from './user';
 import sys from './sys';
 
@@ -116,8 +115,8 @@ const app = defineStore({
 const adaptTemplate = async (appTemplate, templateId) => {
   const { data: diyTemplate } = templateId
     ? // 查询指定模板，一般是预览时使用
-      await DiyApi.getDiyTemplate(templateId)
-    : await DiyApi.getUsedDiyTemplate();
+      await $api?.promotion?.diyApi?.getDiyTemplate(templateId)
+    : await $api?.promotion?.diyApi?.getUsedDiyTemplate();
   // 模板不存在
   if (!diyTemplate) {
     $router.error('TemplateError');

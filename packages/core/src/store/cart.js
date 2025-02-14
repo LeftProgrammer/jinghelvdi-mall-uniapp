@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import CartApi from '@/sheep/api/trade/cart';
+import { $api } from '../index';
 
 const cart = defineStore({
   id: 'cart',
@@ -12,7 +12,7 @@ const cart = defineStore({
   actions: {
     // 获取购物车列表
     async getList() {
-      const { data, code } = await CartApi.getCartList();
+      const { data, code } = await $api?.trade?.cartApi?.getCartList();
       if (code === 0) {
         this.list = data.validList;
 
@@ -34,7 +34,7 @@ const cart = defineStore({
     // 添加购物车
     async add(goodsInfo) {
       // 添加购物项
-      const { code } = await CartApi.addCart({
+      const { code } = await $api?.trade?.cartApi?.addCart({
         skuId: goodsInfo.id,
         count: goodsInfo.goods_num,
       });
@@ -46,7 +46,7 @@ const cart = defineStore({
 
     // 更新购物车
     async update(goodsInfo) {
-      const { code } = await CartApi.updateCartCount({
+      const { code } = await $api?.trade?.cartApi?.updateCartCount({
         id: goodsInfo.goods_id,
         count: goodsInfo.goods_num,
       });
@@ -63,7 +63,7 @@ const cart = defineStore({
       } else {
         idsTemp = ids;
       }
-      const { code } = await CartApi.deleteCart(idsTemp);
+      const { code } = await $api?.trade?.cartApi?.deleteCart(idsTemp);
       if (code === 0) {
         await this.getList();
       }
@@ -71,7 +71,7 @@ const cart = defineStore({
 
     // 单选购物车商品
     async selectSingle(goodsId) {
-      const { code } = await CartApi.updateCartSelected({
+      const { code } = await $api?.trade?.cartApi?.updateCartSelected({
         ids: [goodsId],
         selected: !this.selectedIds.includes(goodsId), // 取反
       });
@@ -82,7 +82,7 @@ const cart = defineStore({
 
     // 全选购物车商品
     async selectAll(flag) {
-      const { code } = await CartApi.updateCartSelected({
+      const { code } = await $api?.trade?.cartApi?.updateCartSelected({
         ids: this.list.map((item) => item.id),
         selected: flag
       });

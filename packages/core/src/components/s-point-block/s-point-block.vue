@@ -143,8 +143,6 @@
    */
   import { computed, onMounted, reactive, ref } from 'vue';
   import sheep from '../../index';
-  import SpuApi from '@/sheep/api/product/spu';
-  import PointApi from '@/sheep/api/promotion/point';
   import { PromotionActivityTypeEnum } from '../../util/const';
 
   // 布局类型
@@ -232,7 +230,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getPointActivityDetailList(ids) {
-    const { data } = await PointApi.getPointActivityListByIds(ids);
+    const { data } = await sheep.$api?.promotion?.pointApi?.getPointActivityListByIds(ids);
     return data;
   }
 
@@ -242,7 +240,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getSpuDetail(ids) {
-    const { data: spu } = await SpuApi.getSpuDetail(ids);
+    const { data: spu } = await sheep.$api?.product?.spuApi.getSpuDetail(ids);
     return spu;
   }
 

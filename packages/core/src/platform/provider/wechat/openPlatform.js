@@ -1,6 +1,5 @@
 // 登录
-import third from '@/sheep/api/migration/third';
-import SocialApi from '@/sheep/api/member/social';
+import { $api } from '../../../index'
 import $share from '../../../platform/share';
 
 // TODO 芋艿：等后面搞 App 再弄
@@ -17,8 +16,8 @@ const login = () => {
     });
     debugger
     if (loginRes.errMsg == 'login:ok') {
-      // TODO third.wechat.login 函数未实现
-      const res = await third.wechat.login({
+      // TODO third.WechatApi.login 函数未实现
+      const res = await $api?.third?.WechatApi?.login({
         platform: 'openPlatform',
         shareInfo: uni.getStorageSync('shareLog') || {},
         payload: encodeURIComponent(
@@ -44,13 +43,13 @@ const login = () => {
 
 // 微信 App 解除绑定
 const unbind = async (openid) => {
-  const { code } = await SocialApi.socialUnbind(socialType, openid);
+  const { code } = await $api?.member?.socialApi?.socialUnbind(socialType, openid);
   return code === 0;
 };
 
 // 获得社交信息
 async function getInfo() {
-  const { code, data } = await SocialApi.getSocialUser(socialType);
+  const { code, data } = await $api?.member?.socialApi?.getSocialUser(socialType);
   if (code !== 0) {
     return undefined;
   }

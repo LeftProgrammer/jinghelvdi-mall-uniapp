@@ -1,4 +1,4 @@
-// import third from '@/sheep/api/third';
+import { $api } from '../../../index';
 // TODO 芋艿：等后面搞 App 再弄
 
 const login = () => {
@@ -11,7 +11,7 @@ const login = () => {
           success: async (res) => {
             if (res.errMsg === 'getUserInfo:ok') {
               const payload = res.userInfo;
-              const { error } = await third.apple.login({
+              const { error } = await $api?.third?.AppleApi?.login({
                 payload,
                 shareInfo: uni.getStorageSync('shareLog') || {},
               });

@@ -1,6 +1,5 @@
-import { $url, $router, $platform, $store } from '../index';
+import { $url, $router, $platform, $store, $api } from '../index';
 import { SharePageEnum } from '../util/const';
-import BrokerageApi from '@/sheep/api/trade/brokerage';
 
 // #ifdef H5
 import $wxsdk from '../libs/sdk-h5-weixin';
@@ -184,7 +183,7 @@ const bindBrokerageUser = async (val = undefined) => {
       return;
     }
     // 绑定成功返回 true，失败返回 false
-    const { data } = await BrokerageApi.bindBrokerageUser({ bindUserId: shareId });
+    const { data } = await $api?.trade?.brokerageApi?.bindBrokerageUser({ bindUserId: shareId });
     // 绑定成功后清除缓存
     if (data) {
       uni.removeStorageSync('shareId');

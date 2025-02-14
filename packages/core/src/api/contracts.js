@@ -6,61 +6,47 @@ export const ServiceNames = {
   member: {
     AuthApi: 'member.AuthApi',
     UserApi: 'member.UserApi',
-    AddressApi: 'member.AddressApi',
-    PointApi: 'member.PointApi',
-    SignInApi: 'member.SignInApi',
     SocialApi: 'member.SocialApi'
   },
   
   // infra 模块
   infra: {
-    FILE: 'infra.file'
+    FileApi: 'infra.FileApi'
   },
-  
-  // pay 模块
-  pay: {
-    CHANNEL: 'pay.channel',
-    ORDER: 'pay.order',
-    WALLET: 'pay.wallet'
-  },
-  
-  // product 模块
-  product: {
-    CATEGORY: 'product.category',
-    COMMENT: 'product.comment',
-    FAVORITE: 'product.favorite',
-    HISTORY: 'product.history',
-    SPU: 'product.spu'
-  },
-  
+
   // promotion 模块
   promotion: {
-    ACTIVITY: 'promotion.activity',
-    ARTICLE: 'promotion.article',
-    COMBINATION: 'promotion.combination',
-    COUPON: 'promotion.coupon',
-    DIY: 'promotion.diy',
-    KEFU: 'promotion.kefu',
-    POINT: 'promotion.point',
-    REWARD_ACTIVITY: 'promotion.rewardActivity',
-    SECKILL: 'promotion.seckill'
+    CouponApi: 'promotion.CouponApi',
+    CombinationApi: 'promotion.CombinationApi',
+    PointApi: 'promotion.PointApi',
+    ArticleApi: 'promotion.ArticleApi',
+    SeckillApi: 'promotion.SeckillApi',
+    DiyApi: 'promotion.DiyApi',
   },
-  
-  // system 模块
-  system: {
-    AREA: 'system.area',
-    DICT: 'system.dict'
+
+  // product 模块
+  product: {
+    SpuApi: 'product.SpuApi',
   },
-  
+
   // trade 模块
   trade: {
-    AFTER_SALE: 'trade.afterSale',
-    BROKERAGE: 'trade.brokerage',
-    CART: 'trade.cart',
-    CONFIG: 'trade.config',
-    DELIVERY: 'trade.delivery',
-    ORDER: 'trade.order'
-  }
+    OrderApi: 'trade.OrderApi',
+    BrokerageApi: 'trade.BrokerageApi',
+    CartApi: 'trade.CartApi',
+  },
+
+  // pay 模块
+  pay: {
+    PayOrderApi: 'pay.PayOrderApi',
+    PayWalletApi: 'pay.PayWalletApi',
+  },
+
+  // third 模块
+  third: {
+    AppleApi: 'third.AppleApi',
+    WechatApi: 'third.WechatApi',
+  },
 };
 
 // member 模块契约
@@ -68,157 +54,109 @@ export const MemberContracts = {
   // 认证服务契约
   [ServiceNames.member.AuthApi]: {
     login: 'function',
-    refreshToken: 'function',
-    logout: 'function',
     smsLogin: 'function',
     sendSmsCode: 'function',
-    socialAuthRedirect: 'function',
+    createWeixinMpJsapiSignature: 'function',
     socialLogin: 'function',
     weixinMiniAppLogin: 'function',
+    socialAuthRedirect: 'function',
+    refreshToken: 'function',
+    logout: 'function',
   },
 
   // 用户服务契约
   [ServiceNames.member.UserApi]: {
     getUserInfo: 'function',
-    updateUserInfo: 'function',
-    updateAvatar: 'function',
-    updateMobile: 'function',
-    updatePassword: 'function',
-  },
-
-  // 地址服务契约
-  [ServiceNames.member.AddressApi]: {
-    getList: 'function',
-    getDetail: 'function',
-    add: 'function',
-    update: 'function',
-    delete: 'function',
-    setDefault: 'function',
-  },
-
-  // 积分服务契约
-  [ServiceNames.member.PointApi]: {
-    getRecord: 'function',
-    getDetail: 'function',
-  },
-
-  // 签到服务契约
-  [ServiceNames.member.SignInApi]: {
-    sign: 'function',
-    getConfig: 'function',
-    getList: 'function',
+    updateUserMobileByWeixin: 'function',
   },
 
   // 社交服务契约
   [ServiceNames.member.SocialApi]: {
-    bindLogin: 'function',
-    unbind: 'function',
-    getBindList: 'function',
+    socialBind: 'function',
+    socialUnbind: 'function',
+    getSocialUser: 'function',
+    getSubscribeTemplateList: 'function',
+    getWxaQrcode: 'function',
   },
 };
 
 // infra 模块契约
 export const InfraContracts = {
-  [ServiceNames.infra.FILE]: {
-    upload: 'function',
-    getUrl: 'function',
-  },
-};
-
-// pay 模块契约
-export const PayContracts = {
-  [ServiceNames.pay.CHANNEL]: {
-    // todo
-  },
-  [ServiceNames.pay.ORDER]: {
-    create: 'function',
-    query: 'function',
-  },
-  [ServiceNames.pay.WALLET]: {
-    getBalance: 'function',
-    recharge: 'function',
-  },
-};
-
-// product 模块契约
-export const ProductContracts = {
-  [ServiceNames.product.CATEGORY]: {
-    // todo
-  },
-  [ServiceNames.product.COMMENT]: {
-    // todo
-  },
-  [ServiceNames.product.FAVORITE]: {
-    // todo
-  },
-  [ServiceNames.product.HISTORY]: {
-    // todo
-  },
-  [ServiceNames.product.SPU]: {
-    // todo
+  [ServiceNames.infra.FileApi]: {
+    uploadFile: 'function',
+    getFilePresignedUrl: 'function',
+    createFile: 'function',
   },
 };
 
 // promotion 模块契约
 export const PromotionContracts = {
-  [ServiceNames.promotion.ACTIVITY]: {
-    // todo
+  [ServiceNames.promotion.CouponApi]: {
+    takeCoupon: 'function',
+    getCouponTemplateListByIds: 'function',
+    getUnusedCouponCount: 'function',
   },
-  [ServiceNames.promotion.ARTICLE]: {
-    // todo
+  [ServiceNames.promotion.CombinationApi]: {
+    getCombinationActivityListByIds: 'function',
   },
-  [ServiceNames.promotion.COMBINATION]: {
-    // todo
+  [ServiceNames.promotion.PointApi]: {
+    getPointActivityListByIds: 'function',
   },
-  [ServiceNames.promotion.COUPON]: {
-    // todo
+  [ServiceNames.promotion.ArticleApi]: {
+    getArticle: 'function',
   },
-  [ServiceNames.promotion.DIY]: {
-    // todo
+  [ServiceNames.promotion.SeckillApi]: {
+    getSeckillActivityListByIds: 'function',
   },
-  [ServiceNames.promotion.KEFU]: {
-    // todo
-  },
-  [ServiceNames.promotion.POINT]: {
-    // todo
-  },
-  [ServiceNames.promotion.REWARD_ACTIVITY]: {
-    // todo
-  },
-  [ServiceNames.promotion.SECKILL]: {
-    // todo
+  [ServiceNames.promotion.DiyApi]: {
+    getDiyTemplate: 'function',
+    getUsedDiyTemplate: 'function',
   },
 };
 
-// system 模块契约
-export const SystemContracts = {
-  [ServiceNames.system.AREA]: {
-    // todo
-  },
-  [ServiceNames.system.DICT]: {
-    // todo
+// product 模块契约
+export const ProductContracts = {
+  [ServiceNames.product.SpuApi]: {
+    getSpuListByIds: 'function',
+    getSpuDetail: 'function',
   },
 };
 
 // trade 模块契约
 export const TradeContracts = {
-  [ServiceNames.trade.AFTER_SALE]: {
-    // todo
+  [ServiceNames.trade.OrderApi]: {
+    getSettlementProduct: 'function',
+    getOrderCount: 'function',
   },
-  [ServiceNames.trade.BROKERAGE]: {
-    // todo
+  [ServiceNames.trade.BrokerageApi]: {
+    bindBrokerageUser: 'function',
   },
-  [ServiceNames.trade.CART]: {
-    // todo
+  [ServiceNames.trade.CartApi]: {
+    getCartList: 'function',
+    addCart: 'function',
+    updateCartCount: 'function',
+    deleteCart: 'function',
+    updateCartSelected: 'function',
   },
-  [ServiceNames.trade.CONFIG]: {
-    // todo
+};
+
+// pay 模块契约
+export const PayContracts = {
+  [ServiceNames.pay.PayOrderApi]: {
+    submitOrder: 'function',
   },
-  [ServiceNames.trade.DELIVERY]: {
-    // todo
+  [ServiceNames.pay.PayWalletApi]: {
+    getPayWallet: 'function',
   },
-  [ServiceNames.trade.ORDER]: {
-    // todo
+};
+
+// third 模块契约
+export const ThirdContracts = {
+  [ServiceNames.third.AppleApi]: {
+    login: 'function',
+  },
+  [ServiceNames.third.WechatApi]: {
+    login: 'function',
   },
 };
 
@@ -226,9 +164,9 @@ export const TradeContracts = {
 export const ServiceContracts = {
   ...MemberContracts,
   ...InfraContracts,
-  ...PayContracts,
-  ...ProductContracts,
   ...PromotionContracts,
-  ...SystemContracts,
+  ...ProductContracts,
   ...TradeContracts,
+  ...PayContracts,
+  ...ThirdContracts,
 };

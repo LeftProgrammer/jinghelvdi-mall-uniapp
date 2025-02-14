@@ -1,8 +1,7 @@
 import dayjs from 'dayjs';
 import { ref } from 'vue';
-import { $store, $helper } from '../index';
+import { $store, $helper, $api } from '../index';
 import test from '../helper/test.js';
-import AuthApi from '@/sheep/api/member/auth';
 
 // 打开授权弹框
 export function showAuthModal(type = 'smsLogin') {
@@ -94,7 +93,7 @@ export function getSmsCode(event, mobile) {
       scene = 1;
       break;
   }
-  AuthApi.sendSmsCode(mobile, scene).then((res) => {
+  $api?.member?.authApi?.sendSmsCode(mobile, scene).then((res) => {
     if (res.code === 0) {
       modalStore.$patch((state) => {
         state.lastTimer[event] = dayjs().unix();

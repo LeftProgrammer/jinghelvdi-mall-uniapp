@@ -1,13 +1,10 @@
 import { defineStore } from 'pinia';
 import { $api } from '../index';
 import $share from '../platform/share';
+import { showAuthModal } from '../hooks/useModal';
 import { clone, cloneDeep } from 'lodash-es';
 import cart from './cart';
 import app from './app';
-import { showAuthModal } from '../hooks/useModal';
-import PayWalletApi from '@/sheep/api/pay/wallet';
-import OrderApi from '@/sheep/api/trade/order';
-import CouponApi from '@/sheep/api/promotion/coupon';
 
 // 默认用户信息
 const defaultUserInfo = {
@@ -59,7 +56,7 @@ const user = defineStore({
 
     // 获得用户钱包
     async getWallet() {
-      const { code, data } = await PayWalletApi.getPayWallet();
+      const { code, data } = await $api?.pay?.payWalletApi?.getPayWallet();
       if (code !== 0) {
         return;
       }
@@ -68,12 +65,12 @@ const user = defineStore({
 
     // 获取订单、优惠券等其他资产信息
     getNumData() {
-      OrderApi.getOrderCount().then((res) => {
+      $api?.trade?.orderApi?.getOrderCount().then((res) => {
         if (res.code === 0) {
           this.numData.orderCount = res.data;
         }
       });
-      CouponApi.getUnusedCouponCount().then((res) => {
+      $api?.promotion?.couponApi?.getUnusedCouponCount().then((res) => {
         if (res.code === 0) {
           this.numData.unusedCouponCount = res.data;
         }

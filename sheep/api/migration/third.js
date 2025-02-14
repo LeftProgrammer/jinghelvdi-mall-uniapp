@@ -2,7 +2,7 @@ import request from '@jinghelvdi/core/src/request/index';
 
 export default {
   // 苹果相关
-  apple: {
+  AppleApi: {
     // 第三方登录
     login: (data) =>
       request({

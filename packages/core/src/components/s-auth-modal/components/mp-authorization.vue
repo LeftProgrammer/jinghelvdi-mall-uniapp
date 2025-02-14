@@ -53,8 +53,6 @@
   import { computed, ref, reactive } from 'vue';
   import sheep from '../../../index';
   import { closeAuthModal } from '../../../hooks/useModal';
-  import FileApi from '@/sheep/api/infra/file';
-  import UserApi from '@/sheep/api/member/user';
 
   const props = defineProps({
     agreeStatus: {
@@ -91,7 +89,7 @@
     if (!tempUrl) {
       return;
     }
-    let { data } = await FileApi.uploadFile(tempUrl);
+    let { data } = await sheep.$api?.infra?.fileApi.uploadFile(tempUrl);
     state.model.avatar = data;
   }
 
@@ -108,7 +106,7 @@
       return;
     }
     // 发起更新
-    const { code } = await UserApi.updateUser({
+    const { code } = await sheep.$api?.member?.userApi?.updateUser({
       avatar: state.model.avatar,
       nickname: state.model.nickname,
     });

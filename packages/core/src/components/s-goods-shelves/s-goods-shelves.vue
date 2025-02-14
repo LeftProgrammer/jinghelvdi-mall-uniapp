@@ -94,7 +94,6 @@
    */
   import { onMounted, ref, computed } from 'vue';
   import sheep from '../../index';
-  import SpuApi from '@/sheep/api/product/spu';
 
   const props = defineProps({
     data: {
@@ -111,7 +110,7 @@
   const goodsList = ref([]);
   onMounted(async () => {
     if (spuIds.length > 0) {
-      let { data } = await SpuApi.getSpuListByIds(spuIds.join(','));
+      let { data } = await sheep.$api?.product?.spuApi.getSpuListByIds(spuIds.join(','));
       goodsList.value = data;
     }
   });

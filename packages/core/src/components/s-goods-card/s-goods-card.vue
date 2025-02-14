@@ -143,8 +143,6 @@
    */
   import { computed, reactive, onMounted } from 'vue';
   import sheep from '../../index';
-  import SpuApi from '@/sheep/api/product/spu';
-  import OrderApi from '@/sheep/api/trade/order';
   import { appendSettlementProduct } from '../../hooks/useGoods';
 
   // 布局类型
@@ -232,7 +230,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getGoodsListByIds(ids) {
-    const { data } = await SpuApi.getSpuListByIds(ids);
+    const { data } = await sheep.$api?.product?.spuApi.getSpuListByIds(ids);
     return data;
   }
 
@@ -241,7 +239,7 @@
     // 加载商品列表
     state.goodsList = await getGoodsListByIds(spuIds.join(','));
     // 拼接结算信息（营销）
-    await OrderApi.getSettlementProduct(state.goodsList.map((item) => item.id).join(',')).then(
+    await sheep.$api?.trade?.orderApi.getSettlementProduct(state.goodsList.map((item) => item.id).join(',')).then(
       (res) => {
         if (res.code !== 0) {
           return;

@@ -1,9 +1,8 @@
-import { $helper, $router, $platform } from '../index'
+import { $helper, $router, $platform, $api } from '../index'
 // #ifdef H5
 import $wxsdk from '../libs/sdk-h5-weixin';
 // #endif
 import { getRootUrl } from '../helper';
-import PayOrderApi from '@/sheep/api/pay/order';
 
 /**
  * 支付
@@ -102,7 +101,7 @@ export default class SheepPay {
         data.channelExtras.openid = openid;
       }
       // 发起预支付 API 调用
-      PayOrderApi.submitOrder(data).then((res) => {
+      $api?.pay?.payOrderApi.submitOrder(data).then((res) => {
         // 成功时
         res.code === 0 && resolve(res);
         // 失败时

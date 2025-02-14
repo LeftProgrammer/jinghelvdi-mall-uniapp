@@ -143,8 +143,6 @@
    */
   import { computed, onMounted, reactive, ref } from 'vue';
   import sheep from '../../index';
-  import SeckillApi from '@/sheep/api/promotion/seckill';
-  import SpuApi from '@/sheep/api/product/spu';
 
   // 布局类型
   const LayoutTypeEnum = {
@@ -231,7 +229,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getSeckillActivityDetailList(ids) {
-    const { data } = await SeckillApi.getSeckillActivityListByIds(ids);
+    const { data } = await sheep.$api?.promotion?.seckillApi?.getSeckillActivityListByIds(ids);
     return data;
   }
 
@@ -241,7 +239,7 @@
    * @return {Promise<undefined>} 商品列表
    */
   async function getSpuDetail(ids) {
-    const { data: spu } = await SpuApi.getSpuDetail(ids);
+    const { data: spu } = await sheep.$api?.product?.spuApi.getSpuDetail(ids);
     return spu;
   }
 

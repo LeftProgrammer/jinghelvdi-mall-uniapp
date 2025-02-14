@@ -61,9 +61,9 @@
 
 <script setup>
   import { ref, reactive, unref } from 'vue';
+  import { $api } from '../../../index';
   import { code, password } from '../../../validate/form';
   import { closeAuthModal, getSmsCode, getSmsTimer } from '../../../hooks/useModal';
-  import UserApi from '@/sheep/api/member/user';
 
   const changePasswordRef = ref(null);
 
@@ -92,7 +92,7 @@
       return;
     }
     // 发起请求
-    const { code } = await UserApi.updateUserPassword(state.model);
+    const { code } = await $api?.member?.userApi?.updateUserPassword(state.model);
     if (code !== 0) {
       return;
     }
