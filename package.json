@@ -88,7 +88,7 @@
     }
   },
   "dependencies": {
-    "@jinghelvdi/core": "file:../packages/core",
+    "@jinghe-lvdi/core": "file:packages/core",
     "dayjs": "^1.11.7",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

@@ -124,7 +124,7 @@
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import _ from 'lodash-es';
   import SpuHistoryApi from '@/sheep/api/product/history';
-  import { cloneDeep } from '@jinghelvdi/core/src/helper/utils';
+  import { cloneDeep } from '@jinghe-lvdi/core/src/helper/utils';
 
   const sys_navBar = sheep.$platform.navbar;
   const pagination = {

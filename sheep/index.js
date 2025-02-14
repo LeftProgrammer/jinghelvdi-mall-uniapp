@@ -1,5 +1,5 @@
-import { $helper,  $url, $router, $platform, $zIndex, $store, $api } from '@jinghelvdi/core';
-import { registerServices } from '@jinghelvdi/core/src/api/registry';
+import { $helper,  $url, $router, $platform, $zIndex, $store, $api } from '@jinghe-lvdi/core';
+import { registerServices } from '@jinghe-lvdi/core/src/api/registry';
 import AuthApi from './api/member/auth';
 import UserApi from './api/member/user';
 import SocialApi from './api/member/social';

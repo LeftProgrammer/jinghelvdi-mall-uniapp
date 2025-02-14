@@ -72,7 +72,7 @@
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import { reactive } from 'vue';
   import _ from 'lodash-es';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
   import CouponApi from '@/sheep/api/promotion/coupon';
 
   // 数据

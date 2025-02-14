@@ -156,10 +156,10 @@
   import detailCommentCard from './components/detail/detail-comment-card.vue';
   import detailContentCard from './components/detail/detail-content-card.vue';
   import grouponCardList from './components/groupon/groupon-card-list.vue';
-  import { useDurationTime, formatGoodsSwiper, fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { useDurationTime, formatGoodsSwiper, fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import CombinationApi from '@/sheep/api/promotion/combination';
   import SpuApi from '@/sheep/api/product/spu';
-  import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
+  import { SharePageEnum } from '@jinghe-lvdi/core/src/util/const';
 
   const headerBg = sheep.$url.css('/static/img/shop/goods/groupon-bg.png');
   const btnBg = sheep.$url.css('/static/img/shop/goods/groupon-btn.png');

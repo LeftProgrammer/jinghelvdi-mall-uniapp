@@ -121,7 +121,7 @@
   import { onLoad, onPageScroll } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
   import { isEmpty } from 'lodash-es';
-  import { fen2yuan, formatExchange, formatGoodsSwiper } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan, formatExchange, formatGoodsSwiper } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import detailNavbar from './components/detail/detail-navbar.vue';
   import detailCellSku from './components/detail/detail-cell-sku.vue';
   import detailTabbar from './components/detail/detail-tabbar.vue';
@@ -129,7 +129,7 @@
   import detailCommentCard from './components/detail/detail-comment-card.vue';
   import detailContentCard from './components/detail/detail-content-card.vue';
   import SpuApi from '@/sheep/api/product/spu';
-  import { PromotionActivityTypeEnum, SharePageEnum } from '@jinghelvdi/core/src/util/const';
+  import { PromotionActivityTypeEnum, SharePageEnum } from '@jinghe-lvdi/core/src/util/const';
   import PointApi from '@/sheep/api/promotion/point';
 
   const headerBg = sheep.$url.css('/static/img/shop/goods/score-bg.png');

@@ -1,5 +1,5 @@
-import request from '@jinghelvdi/core/src/request/index';
-import { isEmpty } from '@jinghelvdi/core/src/helper/utils';
+import request from '@jinghe-lvdi/core/src/request/index';
+import { isEmpty } from '@jinghe-lvdi/core/src/helper/utils';
 
 const OrderApi = {
   // 计算订单信息

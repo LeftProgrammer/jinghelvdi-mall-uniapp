@@ -42,7 +42,7 @@
    *
    */
   import sheep from '../../index';
-  import { deepMerge, addStyle, sleep } from '@jinghelvdi/core';
+  import { deepMerge, addStyle, sleep } from '@jinghe-lvdi/core';
 
   export default {
     name: 'su-tabbar',

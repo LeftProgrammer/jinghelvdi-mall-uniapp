@@ -149,10 +149,10 @@
   import { computed, nextTick, reactive, ref } from 'vue';
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
-  import { useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { useDurationTime } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import SeckillApi from '@/sheep/api/promotion/seckill';
   import dayjs from 'dayjs';
-  import { TimeStatusEnum } from '@jinghelvdi/core/src/util/const';
+  import { TimeStatusEnum } from '@jinghe-lvdi/core/src/util/const';
 
   // 计算页面高度
   const { safeAreaInsets, safeArea } = sheep.$platform.device;

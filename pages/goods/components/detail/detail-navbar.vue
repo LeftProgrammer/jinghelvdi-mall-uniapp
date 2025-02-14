@@ -44,8 +44,8 @@
   import { reactive } from 'vue';
   import { onPageScroll } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
-  import throttle from '@jinghelvdi/core/src/helper/throttle';
-  import { showMenuTools, closeMenuTools } from '@jinghelvdi/core/src/hooks/useModal';
+  import throttle from '@jinghe-lvdi/core/src/helper/throttle';
+  import { showMenuTools, closeMenuTools } from '@jinghe-lvdi/core/src/hooks/useModal';
 
   const sys_statusBar = sheep.$platform.device.statusBarHeight;
   const sys_navBar = sheep.$platform.navbar;

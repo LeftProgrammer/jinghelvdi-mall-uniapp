@@ -97,7 +97,7 @@
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
   import _ from 'lodash-es';
-  import { mobile } from '@jinghelvdi/core/src/validate/form';
+  import { mobile } from '@jinghe-lvdi/core/src/validate/form';
   import AreaApi from '@/sheep/api/system/area';
   import AddressApi from '@/sheep/api/member/address';
 

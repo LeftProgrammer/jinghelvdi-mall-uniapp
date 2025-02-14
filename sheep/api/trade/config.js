@@ -1,4 +1,4 @@
-import request from '@jinghelvdi/core/src/request/index';
+import request from '@jinghe-lvdi/core/src/request/index';
 
 const TradeConfigApi = {
   // 获得交易配置

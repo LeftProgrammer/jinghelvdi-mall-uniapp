@@ -219,7 +219,7 @@
     fen2yuanSimple,
     formatDiscountPercent,
     getRewardActivityRuleItemDescriptions,
-  } from '@jinghelvdi/core/src/hooks/useGoods';
+  } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import detailNavbar from './components/detail/detail-navbar.vue';
   import detailCellSku from './components/detail/detail-cell-sku.vue';
   import detailTabbar from './components/detail/detail-tabbar.vue';
@@ -231,9 +231,9 @@
   import SpuApi from '@/sheep/api/product/spu';
 
   onPageScroll(() => {});
-  import countDown from '@jinghelvdi/core/src/components/countDown/index.vue';
+  import countDown from '@jinghe-lvdi/core/src/components/countDown/index.vue';
   import OrderApi from '@/sheep/api/trade/order';
-  import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
+  import { SharePageEnum } from '@jinghe-lvdi/core/src/util/const';
 
   const bgColor = {
     bgColor: '#E93323',

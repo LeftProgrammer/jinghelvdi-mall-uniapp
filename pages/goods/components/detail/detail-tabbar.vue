@@ -67,7 +67,7 @@
    */
   import { reactive } from 'vue';
   import sheep from '@/sheep';
-  import { showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
+  import { showShareModal } from '@jinghe-lvdi/core/src/hooks/useModal';
   import FavoriteApi from '@/sheep/api/product/favorite';
 
   // 数据

@@ -1,4 +1,4 @@
-import request from '@jinghelvdi/core/src/request/index';
+import request from '@jinghe-lvdi/core/src/request/index';
 
 const AddressApi = {
   // 获得用户收件地址列表

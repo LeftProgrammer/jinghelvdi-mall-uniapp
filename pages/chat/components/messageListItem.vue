@@ -103,7 +103,7 @@
   import { KeFuMessageContentTypeEnum, UserTypeEnum } from '@/pages/chat/util/constants';
   import { emojiList } from '@/pages/chat/util/emoji';
   import sheep from '@/sheep';
-  import { formatDate, jsonParse } from '@jinghelvdi/core/src/util/index';
+  import { formatDate, jsonParse } from '@jinghe-lvdi/core/src/util/index';
   import GoodsItem from '@/pages/chat/components/goods.vue';
   import OrderItem from '@/pages/chat/components/order.vue';
 

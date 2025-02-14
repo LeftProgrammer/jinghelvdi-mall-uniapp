@@ -65,7 +65,7 @@
   import { onLoad } from '@dcloudio/uni-app';
   import { computed, reactive } from 'vue';
   import _ from 'lodash-es';
-  import { handleTree } from '@jinghelvdi/core/src/util/index';
+  import { handleTree } from '@jinghe-lvdi/core/src/util/index';
 
   const state = reactive({
     style: 'second_one', // first_one（一级 - 样式一）, first_two（二级 - 样式二）, second_one（二级）

@@ -141,7 +141,7 @@
   import { onLoad, onPageScroll } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
   import { isEmpty, min } from 'lodash-es';
-  import { fen2yuan, formatGoodsSwiper, useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan, formatGoodsSwiper, useDurationTime } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import detailNavbar from './components/detail/detail-navbar.vue';
   import detailCellSku from './components/detail/detail-cell-sku.vue';
   import detailTabbar from './components/detail/detail-tabbar.vue';
@@ -151,7 +151,7 @@
   import detailProgress from './components/detail/detail-progress.vue';
   import SeckillApi from '@/sheep/api/promotion/seckill';
   import SpuApi from '@/sheep/api/product/spu';
-  import { getTimeStatusEnum, SharePageEnum, TimeStatusEnum } from '@jinghelvdi/core/src/util/const';
+  import { getTimeStatusEnum, SharePageEnum, TimeStatusEnum } from '@jinghe-lvdi/core/src/util/const';
 
   const headerBg = sheep.$url.css('/static/img/shop/goods/seckill-bg.png');
   const btnBg = sheep.$url.css('/static/img/shop/goods/seckill-btn.png');

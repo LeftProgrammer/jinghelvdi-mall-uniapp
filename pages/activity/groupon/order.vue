@@ -68,8 +68,8 @@
   import { onLoad, onReachBottom, onPullDownRefresh } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
   import _ from 'lodash-es';
-  import { formatOrderColor } from '@jinghelvdi/core/src/hooks/useGoods';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { formatOrderColor } from '@jinghe-lvdi/core/src/hooks/useGoods';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
   import CombinationApi from '@/sheep/api/promotion/combination';
 
   // 数据

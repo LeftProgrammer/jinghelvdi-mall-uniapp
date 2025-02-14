@@ -78,10 +78,10 @@
   import { computed, reactive } from 'vue';
   import { onLoad } from '@dcloudio/uni-app';
   import sheep from '@/sheep';
-  import { fen2yuan, useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan, useDurationTime } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import PayOrderApi from '@/sheep/api/pay/order';
   import PayChannelApi from '@/sheep/api/pay/channel';
-  import { getPayMethods, goPayResult } from '@jinghelvdi/core/src/platform/pay';
+  import { getPayMethods, goPayResult } from '@jinghe-lvdi/core/src/platform/pay';
 
   const userWallet = computed(() => sheep.$store('user').userWallet);
 

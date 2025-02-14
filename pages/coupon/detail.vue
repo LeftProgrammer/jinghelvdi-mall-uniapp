@@ -150,10 +150,10 @@
   import { reactive } from 'vue';
   import _ from 'lodash-es';
   import CouponApi from '@/sheep/api/promotion/coupon';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import SpuApi from '@/sheep/api/product/spu';
   import CategoryApi from '@/sheep/api/product/category';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
 
   const state = reactive({
     id: 0, // 优惠劵模版编号 templateId

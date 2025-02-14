@@ -152,8 +152,8 @@
   import dayjs from 'dayjs';
   import _ from 'lodash-es';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
 
   const headerBg = sheep.$url.css('/static/img/shop/user/wallet_card_bg.png');
 

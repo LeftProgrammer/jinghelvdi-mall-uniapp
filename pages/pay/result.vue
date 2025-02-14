@@ -68,9 +68,9 @@
   import { isEmpty } from 'lodash-es';
   import sheep from '@/sheep';
   import PayOrderApi from '@/sheep/api/pay/order';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import OrderApi from '@/sheep/api/trade/order';
-  import { WxaSubscribeTemplate } from '@jinghelvdi/core/src/util/const';
+  import { WxaSubscribeTemplate } from '@jinghe-lvdi/core/src/util/const';
 
   const state = reactive({
     id: 0, // 支付单号

@@ -45,9 +45,9 @@
   import { computed, reactive } from 'vue';
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import PayWalletApi from '@/sheep/api/pay/wallet';
-  import { WxaSubscribeTemplate } from '@jinghelvdi/core/src/util/const';
+  import { WxaSubscribeTemplate } from '@jinghe-lvdi/core/src/util/const';
 
   const userWallet = computed(() => sheep.$store('user').userWallet);
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;

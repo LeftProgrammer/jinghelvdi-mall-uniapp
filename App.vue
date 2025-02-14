@@ -33,5 +33,5 @@
 </script>
 
 <style lang="scss">
-  @import '@jinghelvdi/core/src/scss/index.scss';
+  @import '@jinghe-lvdi/core/src/scss/index.scss';
 </style>

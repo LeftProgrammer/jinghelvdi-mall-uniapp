@@ -1,6 +1,6 @@
 {
-  "name": "@jinghelvdi/core",
-  "version": "1.0.0-alpha.0",
+  "name": "@jinghe-lvdi/core",
+  "version": "1.0.0",
   "description": "Uniapp核心模块库，提供基础工具、状态管理和多平台适配。",
   "keywords": ["uniapp", "core", "framework", "cross-platform"],
   "repository": {

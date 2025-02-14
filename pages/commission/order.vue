@@ -75,9 +75,9 @@
   import { onLoad, onPageScroll, onReachBottom } from '@dcloudio/uni-app';
   import { reactive } from 'vue';
   import _ from 'lodash-es';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
 
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;
   const headerBg = sheep.$url.css('/static/img/shop/user/withdraw_bg.png');

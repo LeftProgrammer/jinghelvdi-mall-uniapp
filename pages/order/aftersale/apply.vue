@@ -124,9 +124,9 @@
   import { reactive, ref } from 'vue';
   import OrderApi from '@/sheep/api/trade/order';
   import TradeConfigApi from '@/sheep/api/trade/config';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import AfterSaleApi from '@/sheep/api/trade/afterSale';
-  import { WxaSubscribeTemplate } from '@jinghelvdi/core/src/util/const';
+  import { WxaSubscribeTemplate } from '@jinghe-lvdi/core/src/util/const';
 
   const form = ref(null);
   const state = reactive({

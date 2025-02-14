@@ -259,7 +259,7 @@
   import _ from 'lodash-es';
   import { onPageScroll } from '@dcloudio/uni-app';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
 
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;
   // const agentInfo = computed(() => sheep.$store('user').agentInfo);

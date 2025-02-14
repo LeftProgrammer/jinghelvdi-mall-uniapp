@@ -1,5 +1,5 @@
-import { baseUrl, apiPath, tenantId } from '@jinghelvdi/core/src/config/index';
-import request from '@jinghelvdi/core/src/request/index';
+import { baseUrl, apiPath, tenantId } from '@jinghe-lvdi/core/src/config/index';
+import request from '@jinghe-lvdi/core/src/request/index';
 
 const FileApi = {
   // 上传文件

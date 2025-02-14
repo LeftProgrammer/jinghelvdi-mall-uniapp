@@ -19,7 +19,7 @@
 
 <script setup>
   import sheep from '@/sheep';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
 
   const props = defineProps({
     pagination: Object,

@@ -66,7 +66,7 @@
   import _ from 'lodash-es';
   import RewardActivityApi from '@/sheep/api/promotion/rewardActivity';
   import SpuApi from '@/sheep/api/product/spu';
-  import { appendSettlementProduct } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { appendSettlementProduct } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import OrderApi from '@/sheep/api/trade/order';
 
   const state = reactive({

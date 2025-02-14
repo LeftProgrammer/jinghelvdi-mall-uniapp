@@ -204,12 +204,12 @@
   import { computed, reactive } from 'vue';
   import sheep from '@/sheep';
   import { onLoad } from '@dcloudio/uni-app';
-  import { fen2yuan, useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
-  import { showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
+  import { fen2yuan, useDurationTime } from '@jinghe-lvdi/core/src/hooks/useGoods';
+  import { showShareModal } from '@jinghe-lvdi/core/src/hooks/useModal';
   import { isEmpty } from 'lodash-es';
   import CombinationApi from '@/sheep/api/promotion/combination';
   import SpuApi from '@/sheep/api/product/spu';
-  import { SharePageEnum } from '@jinghelvdi/core/src/util/const';
+  import { SharePageEnum } from '@jinghe-lvdi/core/src/util/const';
 
   const headerBg = sheep.$url.css('/static/img/shop/user/withdraw_bg.png');
   const statusBarHeight = sheep.$platform.device.statusBarHeight * 2;

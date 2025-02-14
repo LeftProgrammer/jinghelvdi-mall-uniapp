@@ -36,7 +36,7 @@
 <script setup>
   import { onMounted, reactive } from 'vue';
   import sheep from '@/sheep';
-  import { useDurationTime } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { useDurationTime } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import CombinationApi from "@/sheep/api/promotion/combination";
 
   const props = defineProps({

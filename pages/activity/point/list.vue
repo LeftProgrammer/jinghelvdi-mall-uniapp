@@ -30,7 +30,7 @@
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import { reactive, ref } from 'vue';
   import PointApi from '@/sheep/api/promotion/point';
-  // import SLayout from '@jinghelvdi/core/src/components/s-layout/s-layout.vue';
+  // import SLayout from '@jinghe-lvdi/core/src/components/s-layout/s-layout.vue';
 
   // 计算页面高度
   const { safeAreaInsets, safeArea } = sheep.$platform.device;

@@ -56,14 +56,14 @@
 
 <script setup>
   import sheep from '@/sheep';
-  import $share from '@jinghelvdi/core/src/platform/share';
+  import $share from '@jinghe-lvdi/core/src/platform/share';
   import { onLoad, onReachBottom } from '@dcloudio/uni-app';
   import { reactive } from 'vue';
   import _ from 'lodash-es';
-  import { showShareModal } from '@jinghelvdi/core/src/hooks/useModal';
+  import { showShareModal } from '@jinghe-lvdi/core/src/hooks/useModal';
   import SpuApi from '@/sheep/api/product/spu';
   import BrokerageApi from '@/sheep/api/trade/brokerage';
-  import { fen2yuan } from '@jinghelvdi/core/src/hooks/useGoods';
+  import { fen2yuan } from '@jinghe-lvdi/core/src/hooks/useGoods';
 
   const state = reactive({
     pagination: {

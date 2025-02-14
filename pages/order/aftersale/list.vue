@@ -69,9 +69,9 @@
     formatAfterSaleStatus,
     formatAfterSaleStatusDescription,
     handleAfterSaleButtons,
-  } from '@jinghelvdi/core/src/hooks/useGoods';
+  } from '@jinghe-lvdi/core/src/hooks/useGoods';
   import AfterSaleApi from '@/sheep/api/trade/afterSale';
-  import { resetPagination } from '@jinghelvdi/core/src/util/index';
+  import { resetPagination } from '@jinghe-lvdi/core/src/util/index';
 
   const state = reactive({
     currentTab: 0,
